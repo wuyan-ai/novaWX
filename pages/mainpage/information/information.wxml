@@ -1,2 +1,4 @@
 <!--pages/mainpage/information/information.wxml-->
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
 <text>pages/mainpage/information/information.wxml</text>
+<tabbar id="tabbar"></tabbar>

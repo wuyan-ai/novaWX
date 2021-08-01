@@ -37,7 +37,10 @@ login: function () {
       title: '登录成功',  
       icon: 'success',  
       duration: 2000  
-    })  
+    })  ,
+    wx.navigateTo({
+      url: '/pages/mainpage/mainpage',
+    })
   }  
 },
 

@@ -4,8 +4,11 @@ Page({
   /**
    * 页面的初始数据
    */
+  globalData:{      
+    selected: 0, 
+} ,
   data: {
-
+    
   },
 
   /**
