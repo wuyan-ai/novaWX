@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/login/login",
+    
     "pages/mainpage/mainpage",
+    "pages/login/login",
     "pages/mainpage/customer_service/customer_service",
     "pages/mainpage/information/information",
     "pages/mainpage/machine/machine"
