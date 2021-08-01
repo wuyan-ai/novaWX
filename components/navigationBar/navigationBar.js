@@ -116,7 +116,6 @@ Component({
     paddingTop: 20,//导航栏上内边距对应状态栏高度
     showHomeButton: false,//是否显示返回首页
     show: true,//是否显示导航栏
-    navigationBarTextStyle: 'black'
   },
   attached: function(option){
     //检测首页是否在当前页面栈中
@@ -137,12 +136,11 @@ Component({
         pt = systemInfo.statusBarHeight;
         h = 49;
     }
-    var navigationBarTextStyle = __wxConfig.global.window.navigationBarTextStyle;//获取当前项目导航栏文本风格
+
     this.setData({
       height: h,
       paddingTop: pt,
       showHomeButton: showHomeButton,
-      navigationBarTextStyle: navigationBarTextStyle
     })
     console.log(this);
   },

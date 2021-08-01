@@ -1,7 +1,0 @@
-/* pages/mainpage/information/information.wxss */
-#chartView {
-  height: 50%;
-}
-#diagram {
-  height: 50%;
-}

@@ -3,15 +3,15 @@
 <navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
 <form class="login-form">
   <view class="input-group ">
-    <image class="nameImage" src="/image/login/name.jpg"></image>
+    <image class="nameImage" src="/images/name.jpg"></image>
     <!-- <text class="input-label">帐号</text> -->
     <input   background-color:="#f2f2f2" cursor-spacing="30" id="userid" maxlength="20" placeholder="请输入用户名" bindinput="useridInput" bindfocus="inputFocus"/>
   </view>
   <view class="input-group">
-    <image class="keyImage" src="/image/login/key.jpg"></image>
+    <image class="keyImage" src="/images/key.jpg"></image>
     <!-- <text class="input-label">密码</text> -->
     <input password="true" cursor-spacing="30" id="passwd" placeholder="请输入密码" bindinput="passwdInput" bindfocus="inputFocus" />
   </view>
   <!--按钮-->
-  <button class="btn1" size="{{primarySize}}" loading="{{loading}}"  bindtap="login">登录</button>
+  <button class="btn1"  bindtap="login">登录</button>
 </form>

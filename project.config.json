@@ -1,5 +1,5 @@
 {
-  "description": "项目配置文件",
+  "description": "项目配置文件。",
   "packOptions": {
     "ignore": []
   },
@@ -10,7 +10,7 @@
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": false,
+    "newFeature": true,
     "coverView": true,
     "nodeModules": false,
     "autoAudits": false,
@@ -24,18 +24,14 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-<<<<<<< HEAD
     "useApiHostProcess": true,
-=======
-    "useApiHostProcess": false,
->>>>>>> master
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "useIsolateContext": true,
+    "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
@@ -43,17 +39,9 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.0",
+  "libVersion": "2.1.0",
   "appid": "wxc5af13c9d812efa4",
-  "projectname": "NovaWX",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "scripts": {},
-  "staticServerOptions": {
-    "baseURL": "",
-    "servePath": ""
-  },
+  "projectname": "custom%20tabbar",
   "isGameTourist": false,
   "condition": {
     "search": {
@@ -63,12 +51,7 @@
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
-      "list": []
-    },
-    "gamePlugin": {
+      "currentL": -1,
       "list": []
     },
     "miniprogram": {

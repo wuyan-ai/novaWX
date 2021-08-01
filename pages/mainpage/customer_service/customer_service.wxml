@@ -1,4 +1,0 @@
-<!--pages/mainpage/customer_service/customer_service.wxml-->
-<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
-<text>pages/mainpage/customer_service/customer_service.wxml</text>
-<tabbar id="tabbar"></tabbar>

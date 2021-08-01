@@ -56,4 +56,6 @@
   background-color: #f4f4f4;
   color: rgb(143, 136, 136);
   border-radius: 98rpx; 
+  width: 60%;
+  font-size:small;
 }

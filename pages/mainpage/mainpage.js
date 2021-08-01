@@ -1,69 +1,41 @@
-// pages/mainpage/mainpage.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  globalData:{      
-    selected: 0, 
-} ,
   data: {
-    
+    choose_index: 0,
+    tabbar: {
+      "color": "#cdcdcd",
+      "selectedColor": "#2c2c2c",
+      "borderStyle": "#dcdcdc",
+      "backgroundColor": "#ffffff",
+      "list": [{
+          "key": "information",
+          "iconPath": "/images/information.png",
+          "selectedIconPath": "/images/information_selected.png",
+          "text": "数据"
+        },
+        {
+          "key": "machine",
+          "iconPath": "/images/machine.png",
+          "selectedIconPath": "/images/machine_selected.png",
+          "text": "机器"
+        },
+        {
+          "key": "customer_service",
+          "iconPath": "/images/customer_service.png",
+          "selectedIconPath": "/images/customer_service_selected.png",
+          "text": "客服"
+        }
+      ]
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  tabChange: function(e) {
+    // var key = e.detail.key
+    // if (key == 'new') {
+    //   wx.navigateTo({
+    //     url: '/pages/new/new',
+    //   })
+    // } else {
+      this.setData({
+        choose_index: e.detail.index
+      })
+    }
 })

@@ -1,19 +1,10 @@
 {
   "pages": [
-    
-    "pages/mainpage/mainpage",
-    "pages/login/login",
-    "pages/mainpage/customer_service/customer_service",
-    "pages/mainpage/information/information",
-    "pages/mainpage/machine/machine"
+   "pages/login/login",
+    "pages/mainpage/mainpage"
   ],
   "window": {
-    "navigationStyle": "custom",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "自定义导航栏",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

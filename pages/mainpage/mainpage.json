@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "navigationBar":"/component/navigationBar/index",
-    "tabbar":"/component/tabbar/index"
+    "tabbar": "/components/tabbar/tabbar",
+    "information": "/components/information/information",
+    "customer_service": "/components/customer_service/customer_service",
+    "machine": "/components/machine/machine",
+    "navigationBar" :"/components/navigationBar/navigationBar" 
   }
 }

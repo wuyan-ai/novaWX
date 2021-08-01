@@ -1,3 +1,5 @@
-<!--pages/mainpage/mainpage.wxml-->
 <navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
-<tabbar id="tabbar"></tabbar>
+<information wx:if="{{choose_index==0}}"></information>
+<machine wx:if="{{choose_index==1}}"></machine>
+<customer_service wx:if="{{choose_index==2}}"></customer_service>
+<tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
