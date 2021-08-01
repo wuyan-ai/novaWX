@@ -1,7 +1,8 @@
 {
   "pages": [
-   "pages/login/login",
-    "pages/mainpage/mainpage"
+  
+    "pages/mainpage/mainpage",
+    "pages/login/login"
   ],
   "window": {
     "navigationStyle": "custom"

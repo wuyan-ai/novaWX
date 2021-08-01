@@ -16,7 +16,7 @@ Page({
           "key": "machine",
           "iconPath": "/images/machine.png",
           "selectedIconPath": "/images/machine_selected.png",
-          "text": "机器"
+          "text": "设备"
         },
         {
           "key": "customer_service",

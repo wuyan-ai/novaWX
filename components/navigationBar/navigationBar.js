@@ -40,7 +40,7 @@ Component({
     },
     fontSize: {//导航栏字大小
       type: String,
-      value: '20px',//默认
+      value: '15px',//默认
       observer: function(newVal,oldVal,changedPath){
         if(!newVal){
           let obj = {};
