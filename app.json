@@ -1,10 +1,12 @@
 {
-  "pages":[
+  "pages": [
     "pages/login/login",
     "pages/mainpage/mainpage",
-    "pages/logs/logs"
+    "pages/mainpage/customer_service/customer_service",
+    "pages/mainpage/information/information",
+    "pages/mainpage/machine/machine"
   ],
-  "window":{
+  "window": {
     "navigationStyle": "custom",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

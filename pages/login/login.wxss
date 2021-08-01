@@ -14,18 +14,21 @@
   display: flex;
   align-items: center;
   padding: 25rpx 10rpx;
-  margin: 40rpx 3%;
+  /* margin: 40rpx 3%; */
+  margin: auto auto 3% auto;
   background:rgb(250, 246, 246);
   border-radius: 5px;
   border: 2px solid #f4f4f4;
   transition: all .25s ease-in-out;
+  width: 65%;
 }
 .input-group.active {
   border: 2px solid #7acfa6;
 }
 /*输入框*/
 .nameImage, .keyImage {
-  margin-left: 22px;
+  margin-left: 5%;
+  padding-right:5% ;
   width: 14px;
   height: 14px
 }
@@ -49,7 +52,6 @@
 }
 
 .btn1 {
-  width: 80%;
   margin-top: 80rpx;
   background-color: #f4f4f4;
   color: rgb(143, 136, 136);

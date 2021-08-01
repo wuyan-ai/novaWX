@@ -1,2 +1,2 @@
 <!--pages/mainpage/mainpage.wxml-->
-<text>pages/mainpage/mainpage.wxml</text>
+<tabbar id="tabbar"></tabbar>>
