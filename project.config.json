@@ -24,7 +24,11 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+<<<<<<< HEAD
     "useApiHostProcess": true,
+=======
+    "useApiHostProcess": false,
+>>>>>>> master
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

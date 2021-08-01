@@ -1,3 +1,9 @@
 <!--pages/mainpage/information/information.wxml-->
+<<<<<<< HEAD
 <text>你好</text>
 
+=======
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
+<text>pages/mainpage/information/information.wxml</text>
+<tabbar id="tabbar"></tabbar>
+>>>>>>> master

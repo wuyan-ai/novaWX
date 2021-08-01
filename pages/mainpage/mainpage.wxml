@@ -1,2 +1,3 @@
 <!--pages/mainpage/mainpage.wxml-->
-<tabbar id="tabbar"></tabbar>>
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
+<tabbar id="tabbar"></tabbar>

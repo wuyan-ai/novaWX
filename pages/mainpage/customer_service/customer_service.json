@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "navigationBar":"/component/navigationBar/index",
+    "tabbar":"/component/tabbar/index"
+  }
 }
