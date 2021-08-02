@@ -1,2 +1,11 @@
 <!--components/notebook/notebook.wxml-->
-<text>customer_service</text>
+<text class="service">客服支持</text>
+<text class="text-form">服务热线</text>
+<text class="text-form2">(+86)136 3866 7765</text>
+<text class="text-form">电子邮箱</text>
+<text class="text-form2">1972698591@qq.com</text>
+<text class="text-form">微信二维码</text>
+<view class='keyImage'>
+  <image src="/images/logo.jpg" class='in-image'   >
+  </image>
+</view>

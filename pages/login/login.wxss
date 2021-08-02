@@ -16,9 +16,7 @@
   padding: 25rpx 10rpx;
   /* margin: 40rpx 3%; */
   margin: auto auto 3% auto;
-  background:rgb(250, 246, 246);
-  border-radius: 5px;
-  border: 2px solid #f4f4f4;
+  background: #ffffff;
   transition: all .25s ease-in-out;
   width: 65%;
 }
@@ -27,19 +25,18 @@
 }
 /*输入框*/
 .nameImage, .keyImage {
-  margin-left: 5%;
-  padding-right:5% ;
+  margin-left: 2%;
+  padding-right:1% ;
   width: 14px;
   height: 14px
 }
 
 .input-label {
-  color: #888;
-  font-size: 13pt;
-  height: 25rpx;
+  color: #7acfa6;
+  font-size: 11pt;
+  height: 20rpx;
   line-height: 25rpx;
   padding: 0 25rpx;
-  border-right: 1px solid #d8d8d8; 
 }
 .input-group input,
 .input-group picker {
@@ -53,9 +50,12 @@
 
 .btn1 {
   margin-top: 80rpx;
-  background-color: #f4f4f4;
-  color: rgb(143, 136, 136);
-  border-radius: 98rpx; 
+  background-color: #7acfa6;
+  color: #fff;
   width: 60%;
   font-size:small;
+}
+.inputtext{
+  width: 100%;
+  border-bottom: 1px solid gray;
 }

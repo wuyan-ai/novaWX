@@ -1,1 +1,38 @@
 /* components/notebook/notebook.wxss */
+.service{
+  font-size: 50rpx;
+  color: #000000;
+  font-family:SimHei;   /* 黑体 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:70rpx;
+}
+.text-form{
+  font-size: 40rpx;
+  color: #000000;
+  font-family:SimHei;   /* 黑体 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:50rpx;
+}
+.text-form2{
+  font-size: 40rpx;
+  color: #000000;
+  font-family:SimHei;   /* 黑体 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:30rpx;
+}
+.keyImage {
+  margin-top:30rpx;
+  display:flex;
+  justify-content: center ;  
+
+}
+.in-image{
+  width: 100px;
+  height: 100px
+}
