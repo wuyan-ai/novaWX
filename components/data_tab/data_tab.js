@@ -68,7 +68,7 @@ Page({
   swichNav: function (e) {
     var that = this;
     //TODO:此处发起网络请求，将返回的数据写入data列表。
-    var data=["1512吨","88.2%","83.6%","83.1%","￥32,618","83.6%"];
+    var data=["1512吨","20%","83.6%","95%","￥32,618","100%"];
     if (this.data.currentTab === e.target.dataset.current) {
       this.changeViewData(this,this.data.currentTab,data);
       return false;

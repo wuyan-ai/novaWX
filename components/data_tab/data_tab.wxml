@@ -16,7 +16,7 @@
     <text class="tips_right">领先于</text>
     <view class="myProgress">
         <text class="tips1">{{tips1}}</text>
-        <text class="tips2">{{tips2}}</text>
+        <text class="tips2">{{tips2}}的用户</text>
         <view class="myBar1" style="width:{{tips2}};"></view>
     </view>
   </view>
@@ -26,7 +26,7 @@
     <text class="tips_right">领先于</text>
     <view class="myProgress">
         <text class="tips3">{{tips3}}</text>
-        <text class="tips4">{{tips4}}</text>
+        <text class="tips4">{{tips4}}的用户</text>
         <view class="myBar2" style="width:{{tips4}};"></view>
     </view>
   </view>
@@ -36,7 +36,7 @@
     <text class="tips_right">领先于</text>
     <view class="myProgress">
         <text class="tips5">{{tips5}}</text>
-        <text class="tips6">{{tips6}}</text>
+        <view class="tips6">{{tips6}}的用户</view>
         <view class="myBar3" style="width:{{tips6}};"></view>
     </view>
   </view>
