@@ -3,6 +3,6 @@
     <text>你好</text>
   </view> 
   <view class="statistics">
-    <text>世界</text>
+    <data_tab></data_tab>
   </view> 
 </view>
