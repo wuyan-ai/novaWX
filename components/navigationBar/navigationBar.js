@@ -56,6 +56,7 @@ Component({
         // console.log(newVal,oldVal,changedPath);
         if(!newVal){
           let obj = {};
+          oldVal.replace(getRegExp("\\\\n", "g"), "\n") 
           obj[changedPath[0]] = oldVal;
           this.setData(obj);
         }

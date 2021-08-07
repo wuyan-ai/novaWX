@@ -10,6 +10,6 @@
 			<view class="back-home icon" style="" bind:tap="navigateBackHome"></view>
 		</view>
 	</view>
-	<view class="title">{{title!='none'?title:''}}</view>
+	<view class="title"> <image class="keyImage" src="/images/lefalogo.png"></image></view>
 </view>
 <view class="navigation-bar-holder" wx:if="{{fixed && show}}" style="background:{{placeholderBg}};padding-top:{{paddingTop}}px;height:{{height}}px;line-height:{{height}}px;width:750rpx;"></view>

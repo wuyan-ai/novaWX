@@ -1,6 +1,6 @@
 <!--pages/login/login.wxml-->
 
-<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="rgb(67, 206, 203)" fixed="true"  backStyle="normal" ></navigationBar>
 <form class="login-form">
   <view class="input-group ">
     <image class="nameImage" src="/images/name.jpg"></image>

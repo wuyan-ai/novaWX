@@ -1,12 +1,12 @@
 .container{
   width: 100%;
-  height: 82vh;
+  height: 86vh;
 }
 .chartView{
   margin-top: 0rpx;
   width: 100%;
-  height: 51%;
-  background-color:aqua;
+  height: 55%;
+  background-color:#ffffff;
 }
 .statistics{
   width: 100%;

@@ -4,7 +4,7 @@
   top: 0;
   width: 750rpx;
   color: #ffffff;
-  background: #45b9e5;
+  background: rgb(67, 206, 203);
   z-index: 99;
   text-align: center;
   transition: 300ms;
@@ -21,7 +21,6 @@
 .icon{
   display: inline-block;
   font-family: 'iconfont' !important;
-  speak: none;
   font-style: normal;
   font-weight: bold;
   font-variant: normal;
@@ -79,6 +78,11 @@
 }
 .title{
   font-weight: bold;
+  font-family:SimHei;
+  font-size:40rpx;
+  margin-top:0rpx;
+  display:flex;
+  justify-content: center ;  
 }
 .navigation-bar-holder{
   background: transparent;
@@ -92,4 +96,7 @@
     font-weight: 500;
     font-style: normal;
 }
-
+.keyImage {
+  width:  60px;
+  height: 60px
+}

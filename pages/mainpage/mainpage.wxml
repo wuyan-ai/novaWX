@@ -1,4 +1,4 @@
-<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="#7acfa6" fixed="true"  backStyle="normal" ></navigationBar>
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova" background="rgb(67, 206, 203)" fixed="true"  backStyle="normal" ></navigationBar>
 <information wx:if="{{choose_index==0}}"></information>
 <machine wx:if="{{choose_index==1}}"></machine>
 <customer_service wx:if="{{choose_index==2}}"></customer_service>

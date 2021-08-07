@@ -37,5 +37,5 @@ Page({
       this.setData({
         choose_index: e.detail.index
       })
-    }
+    },
 })

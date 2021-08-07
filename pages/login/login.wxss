@@ -21,7 +21,8 @@
   width: 65%;
 }
 .input-group.active {
-  border: 2px solid #7acfa6;
+  border: 2px solid ;
+  color: rgb(67, 206, 203);
 }
 /*输入框*/
 .nameImage, .keyImage {
@@ -32,7 +33,7 @@
 }
 
 .input-label {
-  color: #7acfa6;
+  color: rgb(67, 206, 203);
   font-size: 11pt;
   height: 20rpx;
   line-height: 25rpx;
@@ -50,10 +51,11 @@
 
 .btn1 {
   margin-top: 80rpx;
-  background-color: #7acfa6;
+  background-color: rgb(67, 206, 203);
   color: #fff;
   width: 60%;
   font-size:small;
+  border-radius: 0;
 }
 .inputtext{
   width: 100%;
