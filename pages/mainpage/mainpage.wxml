@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 <navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="rgb(82,196,196)" fixed="true"  backStyle="normal" ></navigationBar>
 <information wx:if="{{choose_index==0}}"></information>
 <machine wx:if="{{choose_index==1}}"></machine>
