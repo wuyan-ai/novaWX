@@ -3,7 +3,10 @@
     <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
   </view> 
   <view class="statistics">
+<<<<<<< HEAD
     <data_tab></data_tab>
+=======
+>>>>>>> master
     <information_tab></information_tab>
   </view> 
 </view>
