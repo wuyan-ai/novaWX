@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "data_tab": "/components/data_tab/data_tab"
+    "information_tab": "/components/information_tab/information_tab"
   }
 }
