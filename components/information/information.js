@@ -22,6 +22,7 @@ function initChart(canvas, width, height, dpr) {
       containLabel: true,
       top: 100,
       left:10,
+      height: "150rpx"
     },
     tooltip: {
       show: true,
@@ -47,7 +48,8 @@ function initChart(canvas, width, height, dpr) {
       name: 'A',
       type: 'line',
       smooth: true,
-      data: [18, 36, 65, 30, 78, 40, 33]
+      color: 'red',  //线的颜色
+      data: [18, 36, 65, 30, 100, 40, 33]
     }]
   };
 
