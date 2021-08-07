@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents": {
     "tabbar": "/components/tabbar/tabbar",
-    "ec-canvas": "../../ec-canvas/ec-canvas",
-    "information_tab": "/components/information_tab/information_tab"
+    "ec-canvas": "../../ec-canvas/ec-canvas"
   }
 }
