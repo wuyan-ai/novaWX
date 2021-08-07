@@ -7,6 +7,9 @@
   </view> 
   <view class="statistics">
     <data_tab></data_tab>
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   </view> 
 </view>

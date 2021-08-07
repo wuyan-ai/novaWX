@@ -2,8 +2,12 @@
   "component": true,
   "usingComponents": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "tabbar": "/components/tabbar/tabbar",
     "ec-canvas": "../../ec-canvas/ec-canvas"
+=======
+    "data_tab": "/components/data_tab/data_tab"
+>>>>>>> master
 =======
     "data_tab": "/components/data_tab/data_tab"
 >>>>>>> master

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova" background="rgb(67, 206, 203)" fixed="true"  backStyle="normal" ></navigationBar>
+=======
+<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="rgb(82,196,196)" fixed="true"  backStyle="normal" ></navigationBar>
+>>>>>>> master
 <information wx:if="{{choose_index==0}}"></information>
 <machine wx:if="{{choose_index==1}}"></machine>
 <customer_service wx:if="{{choose_index==2}}"></customer_service>

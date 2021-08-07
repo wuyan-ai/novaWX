@@ -13,7 +13,10 @@
   height: 51%;
   margin-bottom:0rpx ;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color:yellow;
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 }
