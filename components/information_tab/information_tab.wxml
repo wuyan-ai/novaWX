@@ -12,8 +12,10 @@
   <!-- <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">  
     <swiper-item>   -->
   <view class="container">
-    <text class="tips_left1">{{tips_left1}}</text>
-    <text class="tips_right">领先于</text>
+    <view class="tips">
+      <text class="tips_left1">{{tips_left1}}</text>
+      <text class="tips_right">领先于</text>
+    </view>
     <view class="myProgress">
         <text class="tips1">{{tips1}}</text>
         <text class="tips2">{{tips2}}的用户</text>
@@ -22,8 +24,10 @@
   </view>
 
   <view class="container">
-    <text class="tips_left2">{{tips_left2}}</text>
-    <text class="tips_right">领先于</text>
+    <view class="tips">
+      <text class="tips_left2">{{tips_left2}}</text>
+      <text class="tips_right">领先于</text>
+    </view>
     <view class="myProgress">
         <text class="tips3">{{tips3}}</text>
         <text class="tips4">{{tips4}}的用户</text>
@@ -32,8 +36,10 @@
   </view>
 
   <view class="container">
-    <text class="tips_left3">{{tips_left3}}</text>
-    <text class="tips_right">领先于</text>
+    <view class="tips">
+      <text class="tips_left3">{{tips_left3}}</text>
+      <text class="tips_right">领先于</text>
+    </view>
     <view class="myProgress">
         <text class="tips5">{{tips5}}</text>
         <view class="tips6">{{tips6}}的用户</view>

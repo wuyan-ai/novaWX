@@ -24,12 +24,13 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
@@ -39,7 +40,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.1.0",
-  "appid": "wxb7b0ebc4fe0e49f0",
+  "appid": "wxc5af13c9d812efa4",
   "projectname": "custom%20tabbar",
   "isGameTourist": false,
   "condition": {

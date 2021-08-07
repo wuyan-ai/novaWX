@@ -11,71 +11,82 @@
 .tab-item {  
   width: 33.3%;  
   text-align: center;  
-  font-size: 15px;  
+  font-size: 15;  
   color: #777;  
 }  
 .swiper {  
   background: #ffffff;  
 }  
 .on {  
-  color: #7acfa6;  
-  border-bottom: 5rpx solid #7acfa6;  
+  color: rgb(82,196,196);  
+  border-bottom: 5rpx solid rgb(82,196,196);  
 } 
+
 .container{
-  margin-top: 3%;
+  margin-top: 8%;
+  padding: 0%;
+  width: 100%;
 }
 
+.tips{
+  width: 85%;
+  height:50rpx;
+}
 .myProgress {
-  border-radius:50px;
-  width: 100%;
+  border-radius:50rpx;
+  width: 90%;
+  height:50rpx;
   background-color: rgb(231,232,233);
 }
 
 .myBar1 {
   width: 88.2%;
-  height: 23px;
+  height: 50rpx;
   background-color:rgb(191,234,234);
   text-align: right;
-  line-height: 30px;
+  line-height: 30rpx;
   color: white;
-  border-radius:50px;
+  border-radius:50rpx;
 }
 
 .myBar2 {
   width: 83.1%;
-  height: 23px;
+  height: 50rpx;
   background-color:rgb(69,192,192);
   text-align: right;
-  line-height: 30px;
+  line-height: 30rpx;
   color: white;
-  border-radius:50px;
+  border-radius:50rpx;
 }
 
 .myBar3 {
-  height: 23px;
+  height: 50rpx;
   background-color:rgb(53,155,155);
   text-align: right;
-  line-height: 30px;
+  line-height: 30rpx;
   color: white;
-  border-radius:50px;
+  border-radius:50rpx;
 }
 .tips_left1{
   font-size: 25rpx;
   margin-top:1%;
+  float: left;
 }
 .tips_left2{
   font-size: 25rpx;
   margin-top:1%;
+  float: left;
 }
 .tips_left3{
   font-size: 25rpx;
   margin-top:1%;
+  float: left;
 }
 .tips_right{
   font-size: 25rpx;
-  float:right;
-  margin-right:7%;
-  margin-top:2%;
+  margin-right:7rpx;
+  margin-top:1%;
+  float: right;
 }
 .tips1{
   float:left;
