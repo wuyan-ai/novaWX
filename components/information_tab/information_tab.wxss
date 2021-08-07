@@ -1,0 +1,100 @@
+.page {  
+  margin-left: 10rpx;  
+  margin-right: 10rpx;
+}  
+.swiper-tab {  
+  display: flex;  
+  flex-direction: row;  
+  line-height: 80rpx;  
+  border-bottom: 2rpx solid #777;  
+}  
+.tab-item {  
+  width: 33.3%;  
+  text-align: center;  
+  font-size: 15px;  
+  color: #777;  
+}  
+.swiper {  
+  background: #ffffff;  
+}  
+.on {  
+  color: #7acfa6;  
+  border-bottom: 5rpx solid #7acfa6;  
+} 
+.container{
+  margin-top: 3%;
+}
+
+.myProgress {
+  border-radius:50px;
+  width: 100%;
+  background-color: rgb(231,232,233);
+}
+
+.myBar1 {
+  width: 88.2%;
+  height: 23px;
+  background-color:rgb(191,234,234);
+  text-align: right;
+  line-height: 30px;
+  color: white;
+  border-radius:50px;
+}
+
+.myBar2 {
+  width: 83.1%;
+  height: 23px;
+  background-color:rgb(69,192,192);
+  text-align: right;
+  line-height: 30px;
+  color: white;
+  border-radius:50px;
+}
+
+.myBar3 {
+  height: 23px;
+  background-color:rgb(53,155,155);
+  text-align: right;
+  line-height: 30px;
+  color: white;
+  border-radius:50px;
+}
+.tips_left1{
+  font-size: 25rpx;
+  margin-top:1%;
+}
+.tips_left2{
+  font-size: 25rpx;
+  margin-top:1%;
+}
+.tips_left3{
+  font-size: 25rpx;
+  margin-top:1%;
+}
+.tips_right{
+  font-size: 25rpx;
+  float:right;
+  margin-right:7%;
+  margin-top:2%;
+}
+.tips1{
+  float:left;
+}
+.tips2{
+  float:right;
+  font-size:10;
+}
+.tips3{
+  float:left;
+}
+.tips4{
+  float:right;
+  font-size:10;
+}
+.tips5{
+  float:left;
+}
+.tips6{
+  float:right;
+  font-size:10;
+}

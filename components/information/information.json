@@ -3,6 +3,7 @@
   "usingComponents": {
     "tabbar": "/components/tabbar/tabbar",
     "ec-canvas": "../../ec-canvas/ec-canvas",
-    "data_tab": "/components/data_tab/data_tab"
+    "data_tab": "/components/data_tab/data_tab",
+    "information_tab": "/components/information_tab/information_tab"
   }
 }
