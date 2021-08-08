@@ -24,7 +24,8 @@
   width: 33.3%;  
   text-align: center;  
   font-size: 15;  
-  color: #777;  
+  background-color: rgb(232,232,232);
+  border: #ffffff;  
 }  
 .swiper {  
   background: #ffffff;  

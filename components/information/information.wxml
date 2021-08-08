@@ -3,7 +3,6 @@
     <ec-canvas id="mychart-dom-line" canvas-id="mychart-line"  ec="{{ec}}"></ec-canvas>
   </view> 
   <view class="statistics">
-      <view>  
         <view class="swiper-tab">  
           <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">本日</view>  
           <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">本周</view>  
@@ -45,6 +44,5 @@
               <view class="myBar3" style="width:{{tips6}};"></view>
           </view>
         </view>
-      </view> 
-        </view> 
+    </view> 
 </view>
