@@ -1,7 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "tabbar": "/components/tabbar/tabbar",
-    "ec-canvas": "../../ec-canvas/ec-canvas"
+    "tabbar": "/components/tabbar/tabbar"
   }
 }
