@@ -1,6 +1,5 @@
 {
   "pages": [
-    "components/line/line",
     "pages/mainpage/mainpage",
     "pages/login/login"
     

@@ -1,6 +1,6 @@
 <view class="container">
   <view class="chartView">
-    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line"  ec="{{ec}}"></ec-canvas>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
   </view> 
   <view class="statistics">
         <view class="swiper-tab">  

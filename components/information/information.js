@@ -1,3 +1,5 @@
+var wxCharts = require('../../utils/wxcharts.js');
+var lineChart = null;
 Component({
       data: {
           currentTab: 0,
@@ -10,7 +12,17 @@ Component({
           tips4:"0%",
           tips5:"￥0",
           tips6:"0%",
-          pageData:["1512吨","20%","83.6%","95%","￥32,618","100%"]
+          pageData:["1512吨","20%","83.6%","95%","￥32,618","100%"],
+          lineData:{
+            categories:[8,19,20],
+            series :[{
+                name: '成交量1',
+                data: [53,99,22],
+                format: function (val, name) {
+                    return val.toFixed(2) + '万';
+                }
+            }]
+        }
       },
       methods: {
         swichNav: function (e) {
@@ -42,6 +54,69 @@ Component({
             tips5:data[4],
             tips6:data[5]
           })
+        },
+        touchHandler: function (e) {
+          console.log(lineChart.getCurrentDataIndex(e));
+          lineChart.showToolTip(e, {
+              // background: '#7cb5ec',
+              format: function (item, category) {
+                  return category + ' ' + item.name + ':' + item.data 
+              }
+          });
+        },    
+        createSimulationData: function () {
+          var categories = [];
+          var data = [];
+          for (var i = 0; i < 10; i++) {
+              categories.push(i);
+              data.push(Math.random()*(20-10)+10);
+          }
+          return {
+              categories: categories,
+              data: data
+          }
+        },
+        //更新折线图数据，直接修改data.lineData即可
+        updateData: function () {
+          lineChart.updateData({
+              categories: this.data.lineData.categories,
+              series: this.data.lineData.series
+          });
+        },
+        onLoad: function (e) {
+          var windowWidth = 320;
+          try {
+              var res = wx.getSystemInfoSync();
+              windowWidth = res.windowWidth;
+          } catch (e) {
+              console.error('getSystemInfoSync failed!');
+          }
+      
+          lineChart = new wxCharts({
+              canvasId: 'lineCanvas',
+              type: 'line',
+              categories: this.data.lineData.categories,
+              animation: true,
+              xAxis: {
+                  disableGrid: true
+              },
+              series:this.data.lineData.series,
+              yAxis: {
+                  title: '成交金额 (万元)',
+                  //数据格式化，保留小数点后两位
+                  format: function (val) {
+                      return val.toFixed(2);
+                  },
+                  min: 0
+              },
+              width: windowWidth,
+              height: 200,
+              dataLabel: false,
+              dataPointShape: true,
+              extra: {
+                  lineStyle: 'curve'
+              }
+          });
         }
       }
 });

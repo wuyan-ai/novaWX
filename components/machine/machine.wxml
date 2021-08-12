@@ -1,7 +1,6 @@
-<!-- <view class="container">
+<view class="container">
   <view class="chartView">
     <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
-    <button type="primary" bindtap="updateData">更新数据</button>
   </view> 
 <view class="machine">  
         <view class="swiper-tab">  
@@ -25,4 +24,4 @@
           </view>
         </view> 
   </view>
-</view> -->
+</view>
