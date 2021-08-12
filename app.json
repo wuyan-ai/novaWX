@@ -1,7 +1,8 @@
 {
   "pages": [
-    "components/line/line",
-    "pages/login/login"
+  
+    "pages/login/login",
+    "pages/mainpage/mainpage"
     
   ],
   "window": {
