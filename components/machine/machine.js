@@ -1,4 +1,4 @@
-var wxCharts = require('../../utils/wxcharts.js');
+import wxCharts from '../../utils/wxcharts.js';
 var app = getApp();
 var lineChart = null;
 Component({

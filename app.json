@@ -1,7 +1,9 @@
 {
   "pages": [
+    
     "pages/mainpage/mainpage",
     "pages/login/login"
+    
     
   ],
   "window": {

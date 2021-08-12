@@ -32,15 +32,41 @@ login: function () {
       duration: 2000  
     })  
 }else {
+   var that = this;
 //TODO: 这里判断 + 修改成跳转的页面
-    wx.showToast({  
-      title: '登录成功',  
-      icon: 'success',  
-      duration: 2000  
-    })  ,
-    wx.navigateTo({
-      url: '/pages/mainpage/mainpage',
+    wx.request({
+      url: 'http://localhost:7777/user/login', 
+      data: {
+        userName:that.data.phone,
+        password:that.data.password
+      },
+      header: {
+        'content-type': 'application/json' 
+      },
+      method:"GET",
+      success (res) {
+        console.log(res.data)
+        if(res.data.code==100){
+          wx.showToast({  
+            title: '登录成功',  
+            icon: 'success',  
+            duration: 2000 ,
+          })  ,
+          wx.navigateTo({
+            url: '/pages/mainpage/mainpage',
+          })
+        }
+        else{
+          wx.showToast({  
+            title: '用户名或密码错误',  
+            icon: 'none',  
+            duration: 2000  ,
+          })
+        }
+        
+      }
     })
+    
   }  
 },
 
