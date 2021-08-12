@@ -1,16 +1,7 @@
 {
   "pages": [
-<<<<<<< HEAD
-    
-    "pages/mainpage/mainpage",
-    "pages/login/login"
-=======
-  
     "pages/login/login",
     "pages/mainpage/mainpage"
->>>>>>> master
-    
-    
   ],
   "window": {
     "navigationStyle": "custom"
