@@ -15,11 +15,14 @@
             <view class="machine_name">当前设备：{{machine_name}}</view>
           </view>
           <view class="machine_info">
-            <view class="blank"></view>
             <view class="machine_detail">设备ID：{{machine_id}}</view>
+            <view class="blank"></view>
             <view class="machine_detail">设备状态：{{machine_network_status}}</view>
+            <view class="blank"></view>
             <view class="machine_detail">更新时间：{{machine_update_time}}</view>
+            <view class="blank"></view>
             <view class="machine_detail">本日产量：{{machine_yeild_daily}}</view>
+            <view class="blank"></view>
             <view class="machine_detail">本日运行时长：{{machine_run_time}}</view>
           </view>
         </view> 

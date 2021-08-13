@@ -27,15 +27,25 @@ Page({
       ]
     }
   },
-  tabChange: function(e) {
-    // var key = e.detail.key
-    // if (key == 'new') {
-    //   wx.navigateTo({
-    //     url: '/pages/new/new',
-    //   })
-    // } else {
+    tabChange: function(e) {
+      // var key = e.detail.key
+      // if (key == 'new') {
+      //   wx.navigateTo({
+      //     url: '/pages/new/new',
+      //   })
+      // } else
       this.setData({
-        choose_index: e.detail.index
+        choose_index:e.detail.index
       })
-    },
+      },
+      detail:function(e){
+        this.setData({
+          choose_index:3
+        })
+      },
+      changeChooseIndex:function(e){
+        this.setData({
+          choose_index:e.detail.index
+        })
+      }
 })

@@ -1,5 +1,6 @@
-<navigationBar id="navigationBar" placeholderBg="" color="#fff" title="Nova"  background="rgb(82,196,196)" fixed="true"  backStyle="normal" ></navigationBar>
-<information wx:if="{{choose_index==0}}"></information>
-<machine wx:if="{{choose_index==1}}"></machine>
-<customer_service wx:if="{{choose_index==2}}"></customer_service>
+<navigationBar id="navigationBar" class="temp" placeholderBg="" color="#fff" title="Nova"  background="rgb(82,196,196)" fixed="true"  backStyle="normal" ></navigationBar>
+<information class="main" wx:if="{{choose_index==0}}"></information>
+<machine class="main" wx:if="{{choose_index==1}}" bindtouchend="detail"></machine>
+<customer_service class="main" wx:if="{{choose_index==2}}"></customer_service>
+<index wx:if="{{choose_index==3}}" bindchangeChooseIndex="changeChooseIndex"></index>
 <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>

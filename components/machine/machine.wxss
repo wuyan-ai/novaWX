@@ -1,16 +1,19 @@
 .container{
   width: 100%;
-  height: 82vh;
+  height: 80vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding: 0;
 }
 .chartView{
   margin-top: 0rpx;
   width: 100%;
-  height: 50%;
+  height: 45%;
   background-color:#ffffff;
 }
 .machine{
   width: 100%;
-  height: 42%;
+  height: 55%;
   margin-bottom:0rpx ;
 }
 
@@ -40,18 +43,20 @@
 .machine_status{
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .machine_img{
   width: 50%;
   height: 100%;
-  float: left;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .img{
-  margin-top:45% ;
   width: 50%;
-  height: 30%;
-  margin-left: 25%;
+  height: 25%;
 }
 
 .machine_name{
@@ -59,27 +64,22 @@
   border-radius: 15rpx;
   font-size: small;
   width: fit-content;
-  height: 7%;
-  padding: 1% 1% 0% 5%;
-  margin-left: 25%;
 }
 .machine_info{
-  margin: auto;
   width: 50%;
   height: 100%;
-  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
 .blank{
-  height: 20%;
+  height: 3%;
 }
 .machine_detail{
   background-color: rgb(232,232,232);
   border-radius: 15rpx;
   font-size: small;
-  width: 80%;
-  height: 7%;
-  padding: 1% 1% 0% 5%;
-  margin-top: 5%;
+  width: 90%;
 }
 .canvas{
   width: 100%;

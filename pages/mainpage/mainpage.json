@@ -4,6 +4,7 @@
     "information": "/components/information/information",
     "customer_service": "/components/customer_service/customer_service",
     "machine": "/components/machine/machine",
-    "navigationBar" :"/components/navigationBar/navigationBar" 
+    "navigationBar" :"/components/navigationBar/navigationBar" ,
+    "index":"/components/machine_detail/machine_detail"
   }
 }
