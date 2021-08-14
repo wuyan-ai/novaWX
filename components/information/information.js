@@ -4,7 +4,7 @@ var option = {
     left: 'center'
   },
   legend: {
-    top: 250,
+    top: 220,
     left: 'center',
   },
   tooltip: {
@@ -57,6 +57,7 @@ Component({
           tips5:"￥0",
           tips6:"0%",
           pageData:["1512吨","20%","83.6%","95%","￥32,618","100%"],
+          date:"2021年5月1号",
           ec: {
             onInit: initChart
           }

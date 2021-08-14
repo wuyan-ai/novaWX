@@ -1,4 +1,3 @@
-<!--components/notebook/notebook.wxml-->
 <text class="service">客服支持</text>
 <text class="text-form">服务热线</text>
 <text class="text-form2">(+86)136 3866 7765</text>

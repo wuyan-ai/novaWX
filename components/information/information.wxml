@@ -1,6 +1,13 @@
 <view class="container">
   <view class="chartView">
-    <lineChart id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></lineChart>
+    <view class="info">
+      <view class="date">{{tips_left1}}</view>
+      <view class="yeild">{{tips1}}</view>
+      <view class="date">{{date}}</view>
+    </view> 
+    <view class="lineCanvs">
+      <lineChart id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></lineChart>
+    </view>
   </view> 
   <view class="statistics">
         <view class="swiper-tab">  

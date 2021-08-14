@@ -1,7 +1,6 @@
 .container{
   width: 100%;
-  height: 100vh;
-  padding: 0;
+  height: 90vh;
 }
 .main_machine{
   width: 100%;

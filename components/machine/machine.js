@@ -4,7 +4,7 @@ var option = {
     left: 'center'
   },
   legend: {
-    top: 250,
+    top: 220,
     left: 'center',
   },
   tooltip: {
@@ -49,6 +49,9 @@ Component({
   },
   data: {
     currentTab: 0,
+    tips:"本日产量",
+    date:"2021年5月1号",
+    yeild:"1234kg",
     ec: {
       onInit: initChart
     }
@@ -58,6 +61,7 @@ Component({
     var that = this;
     //TODO:此处发起网络请求，将返回的数据写入pageData列表,以及要修改折线图的Option并及时更新。
     var data=["设备5","58484","已联网","2021-09-01","300kg","2小时"];
+    console.log(e)
     if (this.data.currentTab === e.target.dataset.current) {
       this.changeViewData(this,data);
       return false;
@@ -66,6 +70,12 @@ Component({
         currentTab: e.target.dataset.current,
       })
       this.changeViewData(this,data);
+      switch(this.data.currentTab){
+        case "0":this.setData({tips:"本日"}); break
+        case "1":this.setData({tips:"本周"}); break
+        case "2":this.setData({tips:"本月"}); break
+        case "3":this.setData({tips:"本年"}); break
+      }
     }
     },
     changeViewData:function(that,data){
