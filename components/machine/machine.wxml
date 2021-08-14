@@ -10,8 +10,8 @@
           <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">本年</view>   
         </view>
         <view class="machine_status">
-          <view class="machine_img">
-            <cover-image class="img" src="{{imgSrc}}" mode="aspectFit"></cover-image>
+          <view class="machine_img" bindtouchend="detail">
+            <cover-image class="img" src="{{imgSrc}}" mode="aspectFit" ></cover-image>
             <view class="machine_name">当前设备：{{machine_name}}</view>
           </view>
           <view class="machine_info">
