@@ -2,15 +2,11 @@ import wxCharts from '../../utils/wxcharts.js';
 var app = getApp();
 var lineChart = null;
 Component({
+  properties:{
+    machine:null
+  },
   data: {
     currentTab: 0,
-    machine_name:"设备1",
-    machine_id:1234567,
-    machine_network_status:"未联网",
-    machine_update_time:"2021-08-33",
-    machine_yeild_daily:"268kg",
-    machine_run_time:"28小时",
-    imgSrc:"/images/machine_offline.png",
     lineData:{
         categories:[8,19,20],
         series :[{
@@ -21,8 +17,8 @@ Component({
             }
         }]
     }
-},
-methods: { 
+  },
+  methods: { 
   swichNav: function (e) {
     var that = this;
     //TODO:此处发起网络请求，将返回的数据写入pageData列表,以及要修改折线图的Option并及时更新。

@@ -16,8 +16,8 @@
       <button class="button" bindtap="navigatoionBack">查看设备数据</button>  
     </view>
     <view class="son_machine">
-      <view class="machine_img_item" wx:for="{{otherMachineList}}" wx:key="item">
-        <cover-image class="img_item" src="{{item.imgSrc}}" mode="aspectFit"></cover-image>
+      <view class="machine_img_item" wx:for="{{otherMachineList}}" wx:key="item" >
+        <cover-image id="{{item.machineID}}" class="img_item" src="{{item.imgSrc}}" mode="aspectFit" bindtap="swap"></cover-image>
         <view class="machineName_item">当前设备：{{item.machine_name}}</view>
       </view>
     </view>  
