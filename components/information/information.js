@@ -1,5 +1,49 @@
-import wxCharts from '../../utils/wxcharts';
-var lineChart = null;
+import * as echarts from '../../utils/ec-canvas/echarts'
+var option = {
+  title: {
+    left: 'center'
+  },
+  legend: {
+    top: 250,
+    left: 'center',
+  },
+  tooltip: {
+    show: true,
+    trigger: 'axis'
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+  },
+  yAxis: {
+    x: 'center',
+    type: 'value',
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+  },
+  series: [{
+    name: 'A',
+    type: 'line',
+    smooth: true,
+    data: [18, 36, 65, 30, 78, 40, 33]
+  }]
+};
+var chart = null
+function initChart(canvas, width, height, dpr) {
+  chart= echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
+  chart.setOption(option);
+  return chart;
+}
+
 Component({
       data: {
           currentTab: 0,
@@ -13,16 +57,9 @@ Component({
           tips5:"￥0",
           tips6:"0%",
           pageData:["1512吨","20%","83.6%","95%","￥32,618","100%"],
-          lineData:{
-            categories:[8,19,20],
-            series :[{
-                name: '成交量1',
-                data: [53,99,22],
-                format: function (val, name) {
-                    return val.toFixed(2) + '万';
-                }
-            }]
-        }
+          ec: {
+            onInit: initChart
+          }
       },
       methods: {
         swichNav: function (e) {
@@ -55,68 +92,6 @@ Component({
             tips6:data[5]
           })
         },
-        touchHandler: function (e) {
-          console.log(lineChart.getCurrentDataIndex(e));
-          lineChart.showToolTip(e, {
-              // background: '#7cb5ec',
-              format: function (item, category) {
-                  return category + ' ' + item.name + ':' + item.data 
-              }
-          });
-        },    
-        createSimulationData: function () {
-          var categories = [];
-          var data = [];
-          for (var i = 0; i < 10; i++) {
-              categories.push(i);
-              data.push(Math.random()*(20-10)+10);
-          }
-          return {
-              categories: categories,
-              data: data
-          }
-        },
-        //更新折线图数据，直接修改data.lineData即可
-        updateData: function () {
-          lineChart.updateData({
-              categories: this.data.lineData.categories,
-              series: this.data.lineData.series
-          });
-        },
-        onLoad: function (e) {
-          var windowWidth = 320;
-          try {
-              var res = wx.getSystemInfoSync();
-              windowWidth = res.windowWidth;
-          } catch (e) {
-              console.error('getSystemInfoSync failed!');
-          }
       
-          lineChart = new wxCharts({
-              canvasId: 'lineCanvas',
-              type: 'line',
-              categories: this.data.lineData.categories,
-              animation: true,
-              xAxis: {
-                  disableGrid: true
-              },
-              series:this.data.lineData.series,
-              yAxis: {
-                  title: '成交金额 (万元)',
-                  //数据格式化，保留小数点后两位
-                  format: function (val) {
-                      return val.toFixed(2);
-                  },
-                  min: 0
-              },
-              width: windowWidth,
-              height: 200,
-              dataLabel: false,
-              dataPointShape: true,
-              extra: {
-                  lineStyle: 'curve'
-              }
-          });
-        }
       }
 });
