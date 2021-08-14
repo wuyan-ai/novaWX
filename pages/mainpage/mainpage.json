@@ -5,6 +5,6 @@
     "customer_service": "/components/customer_service/customer_service",
     "machine": "/components/machine/machine",
     "navigationBar" :"/components/navigationBar/navigationBar" ,
-    "index":"/components/machine_detail/machine_detail"
+    "machine_detail":"/components/machine_detail/machine_detail"
   }
 }

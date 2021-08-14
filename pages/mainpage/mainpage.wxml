@@ -2,5 +2,5 @@
 <information class="main" wx:if="{{choose_index==0}}"></information>
 <machine class="main" wx:if="{{choose_index==1}}" bindchangeChooseIndex="changeChooseIndex"></machine>
 <customer_service class="main" wx:if="{{choose_index==2}}"></customer_service>
-<index wx:if="{{choose_index==3}}" bindchangeChooseIndex="changeChooseIndex"></index>
+<machine_detail wx:if="{{choose_index==3}}" bindchangeChooseIndex="changeChooseIndex"></machine_detail>
 <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
