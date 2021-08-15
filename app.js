@@ -1,2 +1,7 @@
 //app.js
-App({})
+App({
+  data:{
+    userid:"",
+    networkAddress:"http://wy.free.svipss.top/"
+  }
+})
