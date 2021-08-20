@@ -78,12 +78,14 @@ Component({
       }
     }
     },
+
     changeViewData:function(that,data){
     that.setData({machine_name:data[0],machine_id:data[1],machine_network_status:data[2],machine_update_time:data[3],machine_yeild_daily:data[4],machine_run_time:data[5]});
     data[2]=="已联网"?that.setData({imgSrc:"/images/machine_online.png"}):that.setData({imgSrc:"/images/machine_offline.png"})
     },  
+    
     detail:function(){
-      var myDetail={index:3}
+      var myDetail={index:1}
       this.triggerEvent("changeChooseIndex",myDetail)
      }
   }

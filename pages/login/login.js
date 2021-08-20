@@ -34,7 +34,8 @@ Page({
         },
         method:"POST",
         success (res) {
-          if(res.data.code==100){
+          console.log(res.data)
+          if(res.data.code==1000){
             wx.showToast({  
               title: '登录成功',  
               icon: 'success',  
@@ -43,11 +44,11 @@ Page({
             wx.navigateTo({
               url: '/pages/mainpage/mainpage',
             })
-            //TODO:需要将得到的id保存到app.js中，方便其他页面拿到数据
+            app.data.userid=res.data.userid
           }
           else{
             wx.showToast({  
-              title: '用户名或密码错误',  
+              title: res.data.msg,  
               icon: 'none',  
               duration: 2000  ,
             })

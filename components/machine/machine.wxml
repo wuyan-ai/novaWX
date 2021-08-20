@@ -18,15 +18,15 @@
         </view>
         <view class="machine_status">
           <view class="machine_img" bindtouchend="detail">
-            <cover-image class="img" src="{{machine.imgSrc}}" mode="aspectFit" ></cover-image>
-            <view class="machine_name">当前设备：{{machine.machine_name}}</view>
+            <cover-image class="img" src="{{machineStatus == '已联网'?'/images/machine_online.png':'/images/machine_offline.png'}}" mode="aspectFit" ></cover-image>
+            <view class="machine_name">当前设备：设备{{machine.machine_name}}</view>
           </view>
           <view class="machine_info">
-            <view class="machine_detail">设备ID：{{machine.machine_id}}</view>
+            <view class="machine_detail">设备ID：{{machine.machineID}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">设备状态：{{machine.machine_network_status}}</view>
+            <view class="machine_detail">设备状态：{{machine.machineStatus}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">更新时间：{{machine.machine_update_time}}</view>
+            <view class="machine_detail">更新时间：{{machine.machineUpdateTime}}</view>
             <view class="blank"></view>
             <view class="machine_detail">本日产量：{{machine.machine_yeild_daily}}</view>
             <view class="blank"></view>

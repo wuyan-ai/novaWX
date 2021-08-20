@@ -55,7 +55,8 @@
   color: #fff;
   width: 60%;
   font-size:small;
-  border-radius: 0;
+  border-radius: 15rpx;
+  width: 50%;
 }
 .inputtext{
   width: 100%;

@@ -26,40 +26,81 @@ Page({
         }
       ]
     },
-    machine:{
-      machine_name:"设备1",
-      machine_id:1234567,
-      machine_network_status:"未联网",
-      machine_update_time:"2021-08-33",
-      machine_yeild_daily:"268kg",
-      machine_run_time:"28小时",
-      imgSrc:"/images/machine_offline.png"
-    },
+    machine:null,
+    otherMachineList:null,
   },
-    tabChange: function(e) {
-      this.setData({
-        choose_index:e.detail.index
-      })
+  tabChange: function(e) {
+    var app =getApp()
+    var tempUrl=app.data.networkAddress;
+    var tempData={"userid":app.data.userid}
+    switch(e.detail.index){
+      case 0:break;//暂不处理
+      case 1:tempUrl+="user/machineList";break;
+      case 2:break;//暂不处理
+    }
+    var that=this
+    wx.request({
+      url: tempUrl,
+      data : tempData,
+      header: {
+        'content-type': 'application/json' 
       },
-      detail:function(e){
-        this.setData({
-          choose_index:3
-        })
-      },
-      changeChooseIndex:function(e){
-        //此处将发起网络请求，将得到的数据传入临时变量data中
-        var data={
-          imgSrc:e.detail.machineInfo.imgSrc,
-          machine_name:e.detail.machineInfo.machine_name,
-          machine_id:e.detail.machineInfo.machineID,
-          machine_network_status:e.detail.machineInfo.machineStatus,
-          machine_update_time:e.detail.machineInfo.machineUpdateTime,
-          machine_yeild_daily:"512kg",
-          machine_run_time:"2小时"
+      method:"POST",
+      success (res) {
+        if(res.data.code==1000){
+          switch(e.detail.index){
+            case 0:break;//暂不处理
+            case 1:{that.setData({machine:res.data.data[0]})
+                    res.data.data.shift()
+                    that.setData({otherMachineList:res.data.data})}break;
+            case 2:break;
+          }
         }
-        this.setData({
-          choose_index:e.detail.index,
-          machine:data
-        })
+        else{
+          wx.showToast({  
+            title: res.data.msg,  
+            icon: 'none',  
+            duration: 2000  ,
+          })
+        }
       },
+      fail(res){
+        wx.showToast({  
+          title: '网络错误，请检查网络',  
+          icon: 'none',  
+          duration: 2000  ,
+        })
+      }
+    })
+    this.setData({
+      choose_index:e.detail.index,
+    })
+  },
+
+  detail:function(e){
+    this.setData({
+      choose_index:e.detail.index
+    })
+  },
+
+  changeChooseIndex:function(e){
+    this.setData({
+      choose_index:e.detail.index
+    })
+  },
+
+  swap:function(e){
+    var index;
+      for(index=0;index<this.data.otherMachineList.length;index++){
+        if(this.data.otherMachineList[index].machineID==e.detail.id)
+          break;
+      }
+      var temp=this.data.machine
+      this.data.machine=this.data.otherMachineList[index]
+      this.data.otherMachineList[index]=temp
+      this.setData({
+        machine:this.data.machine,
+        otherMachineList:this.data.otherMachineList,
+      })
+  }
 })
