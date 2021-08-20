@@ -13,7 +13,7 @@ Component({
       this.triggerEvent("changeChooseIndex",myDetail)
     },
     swap:function(e){
-      var myDetail={id:e.target.id}
+      var myDetail={id:e.currentTarget.id}
       this.triggerEvent("swap",myDetail)
     },
   },

@@ -3,11 +3,11 @@
       <view class="machine_img">
         <!-- <cover-image class="img" src="{{machine.imgSrc}}" mode="aspectFit"></cover-image> -->
         <cover-image class="img" src="/images/machine_online.png" mode="aspectFit"></cover-image>
-        <view class="machineName">当前设备：设备{{machine.machine_name}}</view>
+        <view class="machineName">当前设备：设备{{machine.machineNum}}</view>
       </view>
       <view class="blank"></view>
       <view class="machineDetailContainer">
-          <view class="machineDetail">设备ID：{{machine.machineID}}</view>
+          <view class="machineDetail">设备ID：{{machine.machineid}}</view>
           <view class="blank"></view>
           <view class="machineDetail">设备状态：{{machine.machineStatus}}</view>
           <view class="blank"></view>
@@ -19,8 +19,8 @@
     <view class="son_machine">
       <view class="machine_img_item" wx:for="{{otherMachineList}}" wx:key="item" >
         <!-- <cover-image id="{{item.machineID}}" class="img_item" src="{{item.imgSrc}}" mode="aspectFit" bindtap="swap"></cover-image> -->
-        <cover-image id="{{item.machineID}}" class="img_item" src="/images/machine_offline.png" mode="aspectFit" bindtap="swap"></cover-image>
-        <view class="machineName_item">当前设备：设备{{item.machine_name}}</view>
+        <cover-image id="{{item.machineid}}" class="img_item" src="/images/machine_offline.png" mode="aspectFit" bindtap="swap"></cover-image>
+        <view class="machineName_item">当前设备：设备{{item.machineNum}}</view>
       </view>
     </view>  
 

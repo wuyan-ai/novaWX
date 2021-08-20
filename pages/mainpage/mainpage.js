@@ -29,6 +29,7 @@ Page({
     machine:null,
     otherMachineList:null,
   },
+
   tabChange: function(e) {
     var app =getApp()
     var tempUrl=app.data.networkAddress;
@@ -92,7 +93,7 @@ Page({
   swap:function(e){
     var index;
       for(index=0;index<this.data.otherMachineList.length;index++){
-        if(this.data.otherMachineList[index].machineID==e.detail.id)
+        if(this.data.otherMachineList[index].machineid==e.detail.id)
           break;
       }
       var temp=this.data.machine
@@ -103,4 +104,5 @@ Page({
         otherMachineList:this.data.otherMachineList,
       })
   }
+
 })
