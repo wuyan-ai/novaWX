@@ -34,7 +34,6 @@ Page({
         },
         method:"POST",
         success (res) {
-          console.log(res.data)
           if(res.data.code==1000){
             wx.showToast({  
               title: '登录成功',  

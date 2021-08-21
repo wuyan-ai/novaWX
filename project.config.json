@@ -39,7 +39,7 @@
     "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.1.0",
+  "libVersion": "2.10.2",
   "appid": "wxc5af13c9d812efa4",
   "projectname": "custom%20tabbar",
   "isGameTourist": false,

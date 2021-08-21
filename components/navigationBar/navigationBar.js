@@ -143,7 +143,7 @@ Component({
       paddingTop: pt,
       showHomeButton: showHomeButton,
     })
-    console.log(this);
+    // console.log(this);
   },
   methods: {
     // 这里是一个自定义方法

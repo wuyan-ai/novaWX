@@ -116,7 +116,6 @@ Page({
   },
 
   oneMachineInfo:function(flag){
-    console.log(new Date().getFullYear)
     var app = getApp()
     var that = this
     wx.request({
