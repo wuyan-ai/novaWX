@@ -9,15 +9,15 @@
       <lineChart id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></lineChart>
     </view>
   </view> 
-<view class="machine">  
+  <view class="machine">  
         <view class="swiper-tab">  
-          <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">本日</view>  
-          <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">本周</view>  
-          <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">本月</view>
-          <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">本年</view>   
+          <view class="tab-item {{currentSonMachineTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichSonMachineNav">本日</view>  
+          <view class="tab-item {{currentSonMachineTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichSonMachineNav">本周</view>  
+          <view class="tab-item {{currentSonMachineTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichSonMachineNav">本月</view>
+          <view class="tab-item {{currentSonMachineTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichSonMachineNav">本年</view>   
         </view>
         <view class="machine_status">
-          <view class="machine_img" bindtouchend="detail">
+          <view class="machine_img" bindtouchend="moreMachine">
             <cover-image class="img" src="{{machine.machineStatus == '运行'|| machine.machineStatus == '空闲' ?'/images/machine_online.png':'/images/machine_offline.png'}}" mode="aspectFit" ></cover-image>
             <view class="machine_name">当前设备：设备{{machine.machineNum}}</view>
           </view>
@@ -28,9 +28,9 @@
             <view class="blank"></view>
             <view class="machine_detail">更新时间：{{machine.machineUpdateTime}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">本日产量：{{machine.machine_yeild_daily}}</view>
+            <view class="machine_detail">{{tips}}产量：{{machine.output}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">本日运行时长：{{machine.machine_run_time}}</view>
+            <view class="machine_detail">{{tips}}运行时长：{{machine.machineWorkTime}}</view>
           </view>
         </view> 
   </view>

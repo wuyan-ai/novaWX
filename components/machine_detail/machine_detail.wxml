@@ -14,7 +14,7 @@
           <view class="machineDetail">更新时间：{{machine.machineUpdateTime}}</view>
       </view>
       <view class="blank"></view>
-      <button class="button" bindtap="navigatoionBack">查看设备数据</button>  
+      <button class="button" bindtap="machineDetail">查看设备数据</button>  
     </view>
     <view class="son_machine">
       <view class="machine_img_item" wx:for="{{otherMachineList}}" wx:key="item" >

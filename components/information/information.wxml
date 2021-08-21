@@ -1,7 +1,7 @@
 <view class="container">
   <view class="chartView">
     <view class="info">
-      <view class="date">{{tips_left1}}</view>
+      <view class="date">{{tips_left}}</view>
       <view class="yeild">{{tips1}}</view>
       <view class="date">{{date}}</view>
     </view> 
@@ -19,7 +19,7 @@
         <view class="container_son">
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left1">{{tips_left1}}</text>
+                <text class="tips_left1">{{tips_left}}总产量</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
@@ -31,7 +31,7 @@
 
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left2">{{tips_left2}}</text>
+                <text class="tips_left2">{{tips_left}}总运行时长</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
@@ -43,7 +43,7 @@
 
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left3">{{tips_left3}}</text>
+                <text class="tips_left3">{{tips_left}}总节省</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">

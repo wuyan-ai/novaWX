@@ -47,9 +47,7 @@ function initChart(canvas, width, height, dpr) {
 Component({
       data: {
           currentTab: 0,
-          tips_left1:"本日产量",
-          tips_left2:"本日产率",
-          tips_left3:"本日节省",
+          tips_left:"本日",
           tips1:"0吨",
           tips2:"0%",
           tips3:"0%",
@@ -79,10 +77,10 @@ Component({
         },  
         changeViewData:function(that,currentTab,data) {
           switch(currentTab){
-            case "0":that.setData({tips_left1:"本日产量",tips_left2:"本日产率",tips_left3:"本日节省"});break;
-            case "1":that.setData({tips_left1:"本周产量",tips_left2:"本周产率",tips_left3:"本周节省"});break;
-            case "2":that.setData({tips_left1:"本月产量",tips_left2:"本月产率",tips_left3:"本月节省"});break;
-            case "3":that.setData({tips_left1:"本年产量",tips_left2:"本年产率",tips_left3:"本年节省"});break;
+            case "0":that.setData({tips_left:"本日"});break;
+            case "1":that.setData({tips_left:"本周"});break;
+            case "2":that.setData({tips_left:"本月"});break;
+            case "3":that.setData({tips_left:"本年"});break;
           }
           that.setData({
             tips1:data[0],

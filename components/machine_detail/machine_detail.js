@@ -8,9 +8,9 @@ Component({
     
   },
   methods: {
-    navigatoionBack:function(){
+    machineDetail:function(){
       var myDetail={index:3}
-      this.triggerEvent("changeChooseIndex",myDetail)
+      this.triggerEvent("machineDetail",myDetail)
     },
     swap:function(e){
       var myDetail={id:e.currentTarget.id}

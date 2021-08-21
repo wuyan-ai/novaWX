@@ -45,11 +45,11 @@ function initChart(canvas, width, height, dpr) {
 }
 Component({
   properties:{
-    machine:null
+    machine:null,
+    currentSonMachineTab:null
   },
   data: {
-    currentTab: 0,
-    tips:"本日产量",
+    tips:"本日",
     date:"2021年5月1号",
     yeild:"1234kg",
     ec: {
@@ -57,26 +57,23 @@ Component({
     }
   },
   methods: { 
-    swichNav: function (e) {
-  
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTab: e.target.dataset.current,
-      })
-      switch(this.data.currentTab){
+    swichSonMachineNav: function (e) {
+      var myDetail={index:e.target.dataset.current}
+      this.triggerEvent("swichSonMachineNav",myDetail)
+    },
+
+    changeTips:function(index){
+      switch(index){
         case "0":this.setData({tips:"本日"}); break
         case "1":this.setData({tips:"本周"}); break
         case "2":this.setData({tips:"本月"}); break
         case "3":this.setData({tips:"本年"}); break
       }
-    }
     },
 
-    detail:function(){
+    moreMachine:function(){
       var myDetail={index:1}
-      this.triggerEvent("changeChooseIndex",myDetail)
+      this.triggerEvent("moreMachine",myDetail)
      }
   }
 })

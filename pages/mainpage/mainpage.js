@@ -1,5 +1,6 @@
 Page({
   data: {
+    currentSonMachineTab:0,
     choose_index: 0,
     tabbar: {
       "color": "#cdcdcd",
@@ -78,16 +79,17 @@ Page({
     })
   },
 
-  detail:function(e){
+  moreMachine:function(e){
     this.setData({
       choose_index:e.detail.index
     })
   },
 
-  changeChooseIndex:function(e){
+  machineDetail:function(e){
     this.setData({
       choose_index:e.detail.index
     })
+    this.oneMachineInfo(0)
   },
 
   swap:function(e){
@@ -103,6 +105,60 @@ Page({
         machine:this.data.machine,
         otherMachineList:this.data.otherMachineList,
       })
-  }
+  },
 
+  swichSonMachineNav:function(e){
+    if (this.data.currentSonMachineTab === e.detail.index) {
+      return false;
+    } else {
+      this.oneMachineInfo(e.detail.index)
+    }
+  },
+
+  oneMachineInfo:function(flag){
+    console.log(new Date().getFullYear)
+    var app = getApp()
+    var that = this
+    wx.request({
+      url: app.data.networkAddress+"user/oneMachineInfo",
+      data : {
+        machineid: Number(that.data.machine.machineid),
+        machineNum: that.data.machine.machineNum,
+        flag: Number(flag),
+        nowTime: "2021-08-14 21:13:21"
+      },
+      header: {
+        'content-type': 'application/json' 
+      },
+      method:"POST",
+      success (res) {
+        if(res.data.code==1000){
+          that.data.machine.output = res.data.data.output
+          that.data.machine.machineWorkTime = res.data.data.machineWorkTime
+          that.setData({
+            machine:that.data.machine,
+          })
+          that.selectComponent("#machine").changeTips(flag)
+          that.setData({
+            currentSonMachineTab:flag
+          })
+        }
+        else{
+          wx.showToast({  
+            title: res.data.msg,  
+            icon: 'none',  
+            duration: 2000  ,
+          })
+        }
+      },
+      fail(res){
+        wx.showToast({  
+          title: '网络错误，请检查网络',  
+          icon: 'none',  
+          duration: 2000  ,
+        })
+      }
+    })
+  }
+  
 })
