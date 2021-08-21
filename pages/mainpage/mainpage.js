@@ -116,7 +116,7 @@ Page({
   },
 
   oneMachineInfo:function(flag){
-    var app = getApp()
+    var app = getApp( )
     var that = this
     wx.request({
       url: app.data.networkAddress+"user/oneMachineInfo",
@@ -124,7 +124,7 @@ Page({
         machineid: Number(that.data.machine.machineid),
         machineNum: that.data.machine.machineNum,
         flag: Number(flag),
-        nowTime: "2021-08-14 21:13:21"
+        nowTime: this.generateSystemDate()
       },
       header: {
         'content-type': 'application/json' 
@@ -158,6 +158,21 @@ Page({
         })
       }
     })
-  }
+  },
+
+  generateSystemDate:function(){
+    var date=new Date()
+    var year = date.getFullYear()
+    var month = date.getMonth()+1
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    return [year,month,day].map(this.formatNumber).join('-')+" "+[hour,minute,second].map(this.formatNumber).join(':')
+  },
   
+  formatNumber:function(n){
+    n=n.toString()
+    return n[1]?n:'0'+n
+  }
 })
