@@ -1,8 +1,8 @@
 <view class="container">
   <view class="chartView">
     <view class="info">
-      <view class="date">{{tips_left}}</view>
-      <view class="yeild">{{tips1}}</view>
+      <view class="date">{{information.tips_left}}</view>
+      <view class="yeild">{{information.tips1}}</view>
       <view class="date">{{date}}</view>
     </view> 
     <view class="lineCanvs">
@@ -11,45 +11,45 @@
   </view> 
   <view class="statistics">
         <view class="swiper-tab">  
-          <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">本日</view>  
-          <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">本周</view>  
-          <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">本月</view>
-          <view class="tab-item {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">本年</view>   
+          <view class="tab-item {{currentSonInformationTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichSonInformationNav">本日</view>  
+          <view class="tab-item {{currentSonInformationTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichSonInformationNav">本周</view>  
+          <view class="tab-item {{currentSonInformationTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichSonInformationNav">本月</view>
+          <view class="tab-item {{currentSonInformationTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichSonInformationNav">本年</view>   
         </view>
         <view class="container_son">
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left1">{{tips_left}}总产量</text>
+                <text class="tips_left1">{{information.tips_left}}总产量</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
-                  <text class="tips1">{{tips1}}</text>
-                  <text class="tips2">{{tips2}}的用户</text>
-                  <view class="myBar1" style="width:{{tips2}};"></view>
+                  <text class="tips1">{{information.outputSum}}吨</text>
+                  <text class="tips2">{{information.upUserOutput}}的用户</text>
+                  <view class="myBar1" style="width:{{information.upUserOutput}};"></view>
               </view>
             </view>
 
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left2">{{tips_left}}总运行时长</text>
+                <text class="tips_left2">{{information.tips_left}}总运行时长</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
-                  <text class="tips3">{{tips3}}</text>
-                  <text class="tips4">{{tips4}}的用户</text>
-                  <view class="myBar2" style="width:{{tips4}};"></view>
+                  <text class="tips3">{{information.worktimeSum}}小时</text>
+                  <text class="tips4">{{information.upUserWorkTime}}的用户</text>
+                  <view class="myBar2" style="width:{{information.upUserWorkTime}};"></view>
               </view>
             </view>
 
             <view class="container_item">
               <view class="tips">
-                <text class="tips_left3">{{tips_left}}总节省</text>
+                <text class="tips_left3">{{information.tips_left}}总节省</text>
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
-                  <text class="tips5">{{tips5}}</text>
-                  <view class="tips6">{{tips6}}的用户</view>
-                  <view class="myBar3" style="width:{{tips6}};"></view>
+                  <text class="tips5">￥{{information.incomeSum}}</text>
+                  <view class="tips6">{{information.upUserIncome}}的用户</view>
+                  <view class="myBar3" style="width:{{information.upUserIncome}};"></view>
               </view>
             </view>
         </view>

@@ -73,8 +73,8 @@
 }
 
 .myBar1 {
-  width: 88.2%;
-  height: 50rpx;
+  /* width: 88.2%; */
+  height: 48rpx;
   background-color:rgb(191,234,234);
   text-align: right;
   line-height: 30rpx;
@@ -83,8 +83,8 @@
 }
 
 .myBar2 {
-  width: 83.1%;
-  height: 50rpx;
+  /* width: 83.1%; */
+  height: 48rpx;
   background-color:rgb(69,192,192);
   text-align: right;
   line-height: 30rpx;
@@ -93,7 +93,7 @@
 }
 
 .myBar3 {
-  height: 50rpx;
+  height: 48rpx;
   background-color:rgb(53,155,155);
   text-align: right;
   line-height: 30rpx;

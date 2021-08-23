@@ -1,6 +1,7 @@
 Page({
   data: {
     currentSonMachineTab:0,
+    currentSonInformationTab:0,
     choose_index: 0,
     tabbar: {
       "color": "#cdcdcd",
@@ -29,6 +30,8 @@ Page({
     },
     machine:null,
     otherMachineList:null,
+    date:null,
+    information:null,
   },
 
   tabChange: function(e) {
@@ -36,11 +39,23 @@ Page({
     var tempUrl=app.data.networkAddress;
     var tempData={"userid":app.data.userid}
     switch(e.detail.index){
-      case 0:break;//暂不处理
+      case 0:{
+        tempData.nowTime=this.generateSystemDate()
+        tempData.flag=e.detail.flag
+        tempUrl+="user/upUserInfo"
+      }break;
       case 1:tempUrl+="user/machineList";break;
-      case 2:break;//暂不处理
+      case 3:{
+        tempUrl+="user/oneMachineInfo"
+        tempData={
+          machineid: Number(this.data.machine.machineid),
+          machineNum: this.data.machine.machineNum,
+          flag: Number(e.detail.flag),
+          nowTime: this.generateSystemDate()
+        }
+      }break;
     }
-    var that=this
+    var that = this
     wx.request({
       url: tempUrl,
       data : tempData,
@@ -51,11 +66,35 @@ Page({
       success (res) {
         if(res.data.code==1000){
           switch(e.detail.index){
-            case 0:break;//暂不处理
+            case 0:{
+              switch(res.data.data.flag){
+                case 0:res.data.data.tips_left="本日";break;
+                case 1:res.data.data.tips_left="本周";break;
+                case 2:res.data.data.tips_left="本月";break;
+                case 3:res.data.data.tips_left="本年";break;
+              }
+              that.setData({
+                information:res.data.data,
+                currentSonInformationTab:res.data.data.flag
+              });
+            };break;//暂不处理
             case 1:{that.setData({machine:res.data.data[0]})
                     res.data.data.shift()
                     that.setData({otherMachineList:res.data.data})}break;
-            case 2:break;
+            case 3:{
+              switch(res.data.data.flag){
+                case 0:res.data.data.tips="本日";break;
+                case 1:res.data.data.tips="本周";break;
+                case 2:res.data.data.tips="本月";break;
+                case 3:res.data.data.tips="本年";break;
+              }
+              that.data.machine.output = res.data.data.output
+              that.data.machine.machineWorkTime = res.data.data.machineWorkTime
+              that.setData({
+                machine:that.data.machine,
+                currentSonMachineTab:res.data.data.flag
+              })
+            }break;
           }
         }
         else{
@@ -89,7 +128,13 @@ Page({
     this.setData({
       choose_index:e.detail.index
     })
-    this.oneMachineInfo(0)
+    var myDetail = {
+      detail:{
+        index:3,
+        flag:0
+      }
+    }
+    this.tabChange(myDetail)
   },
 
   swap:function(e){
@@ -111,53 +156,28 @@ Page({
     if (this.data.currentSonMachineTab === e.detail.index) {
       return false;
     } else {
-      this.oneMachineInfo(e.detail.index)
+      var myDetail = {
+        detail:{
+          index:3,
+          flag:Number(e.detail.index)
+        }
+      }
+      this.tabChange(myDetail)
     }
   },
 
-  oneMachineInfo:function(flag){
-    var app = getApp( )
-    var that = this
-    wx.request({
-      url: app.data.networkAddress+"user/oneMachineInfo",
-      data : {
-        machineid: Number(that.data.machine.machineid),
-        machineNum: that.data.machine.machineNum,
-        flag: Number(flag),
-        nowTime: this.generateSystemDate()
-      },
-      header: {
-        'content-type': 'application/json' 
-      },
-      method:"POST",
-      success (res) {
-        if(res.data.code==1000){
-          that.data.machine.output = res.data.data.output
-          that.data.machine.machineWorkTime = res.data.data.machineWorkTime
-          that.setData({
-            machine:that.data.machine,
-          })
-          that.selectComponent("#machine").changeTips(flag)
-          that.setData({
-            currentSonMachineTab:flag
-          })
+  swichSonInformationNav:function(e){
+    if (this.data.currentSonInformationTab === e.detail.index) {
+      return false;
+    } else {
+      var myDetail = {
+        detail:{
+          index:0,
+          flag:Number(e.detail.index)
         }
-        else{
-          wx.showToast({  
-            title: res.data.msg,  
-            icon: 'none',  
-            duration: 2000  ,
-          })
-        }
-      },
-      fail(res){
-        wx.showToast({  
-          title: '网络错误，请检查网络',  
-          icon: 'none',  
-          duration: 2000  ,
-        })
       }
-    })
+      this.tabChange(myDetail)
+    }
   },
 
   generateSystemDate:function(){
@@ -168,11 +188,25 @@ Page({
     var hour = date.getHours()
     var minute = date.getMinutes()
     var second = date.getSeconds()
+    this.setData({
+      date:year+"年"+month+"月"+day+"日"
+    })
     return [year,month,day].map(this.formatNumber).join('-')+" "+[hour,minute,second].map(this.formatNumber).join(':')
   },
   
   formatNumber:function(n){
     n=n.toString()
     return n[1]?n:'0'+n
-  }
+  },
+  
+  onLoad(res){
+    var e={
+      detail:{
+        flag:0,
+        index:0
+      }
+    }
+    this.setData({currentSonInformationTab:0})
+    this.tabChange(e)
+  }, 
 })

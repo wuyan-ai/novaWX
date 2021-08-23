@@ -45,52 +45,23 @@ function initChart(canvas, width, height, dpr) {
 }
 
 Component({
-      data: {
-          currentTab: 0,
-          tips_left:"本日",
-          tips1:"0吨",
-          tips2:"0%",
-          tips3:"0%",
-          tips4:"0%",
-          tips5:"￥0",
-          tips6:"0%",
-          pageData:["1512吨","20%","83.6%","95%","￥32,618","100%"],
-          date:"2021年5月1号",
-          ec: {
-            onInit: initChart
-          }
-      },
-      methods: {
-        swichNav: function (e) {
-          var that = this;
-          //TODO:此处发起网络请求，将返回的数据写入pageData列表,以及要修改折线图的Option并及时更新。
-         
-          if (this.data.currentTab === e.target.dataset.current) {
-            this.changeViewData(this,this.data.currentTab,this.data.pageData);
-            return false;
-          } else {
-            that.setData({
-              currentTab: e.target.dataset.current,
-            })
-            this.changeViewData(this,this.data.currentTab,this.data.pageData);
-          }
-        },  
-        changeViewData:function(that,currentTab,data) {
-          switch(currentTab){
-            case "0":that.setData({tips_left:"本日"});break;
-            case "1":that.setData({tips_left:"本周"});break;
-            case "2":that.setData({tips_left:"本月"});break;
-            case "3":that.setData({tips_left:"本年"});break;
-          }
-          that.setData({
-            tips1:data[0],
-            tips2:data[1],
-            tips3:data[2],
-            tips4:data[3],
-            tips5:data[4],
-            tips6:data[5]
-          })
-        },
+  properties:{
+    information:null,
+    currentSonInformationTab: null,
+    date:null
+  },
+  data: {
       
+      date:"2021年5月1号",
+      ec: {
+        onInit: initChart
       }
+  },
+  methods: {
+    swichSonInformationNav: function (e) {
+      var myDetail={index:e.target.dataset.current}
+      this.triggerEvent("swichSonInformationNav",myDetail)
+    },  
+  
+  }
 });

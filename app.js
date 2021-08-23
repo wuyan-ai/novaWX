@@ -1,7 +1,7 @@
 //app.js
 App({
   data:{
-    userid:null,
+    userid:1,
     networkAddress:"http://wy.free.svipss.top/"
   }
 })

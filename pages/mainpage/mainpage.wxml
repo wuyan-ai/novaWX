@@ -1,6 +1,6 @@
 <navigationBar id="navigationBar" class="temp" placeholderBg="" color="#fff" title="Nova"  background="rgb(82,196,196)" fixed="true"  backStyle="normal" ></navigationBar>
-<information class="main" wx:if="{{choose_index==0}}"></information>
+<information class="main" wx:if="{{choose_index==0}}" information="{{information}}" currentSonInformationTab="{{currentSonInformationTab}}" bindswichSonInformationNav="swichSonInformationNav" date="{{date}}"></information>
 <machine_list wx:if="{{choose_index==1}}" bindmachineDetail="machineDetail" bindshowMachineData="showMachineData" machine="{{machine}}" otherMachineList="{{otherMachineList}}" bindswap="swap"></machine_list>
 <customer_service class="main" wx:if="{{choose_index==2}}"></customer_service>
-<machine class="main" id="machine" wx:if="{{choose_index==3}}" bindmoreMachine="moreMachine" machine="{{machine}}" currentSonMachineTab="{{currentSonMachineTab}}" bindswichSonMachineNav="swichSonMachineNav" bindchangeTips="changeTips"></machine>
+<machine class="main" id="machine" wx:if="{{choose_index==3}}" bindmoreMachine="moreMachine" machine="{{machine}}" currentSonMachineTab="{{currentSonMachineTab}}" bindswichSonMachineNav="swichSonMachineNav" bindchangeTips="changeTips" date="{{date}}"></machine>
 <tabbar bindchange="tabChange" data="{{tabbar}}"></tabbar>
