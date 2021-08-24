@@ -37,12 +37,18 @@ Page({
   tabChange: function(e) {
     var app =getApp()
     var tempUrl=app.data.networkAddress;
-    var tempData={"userid":app.data.userid}
+    var tempData={userid:app.data.userid}
     switch(e.detail.index){
       case 0:{
         tempData.nowTime=this.generateSystemDate()
         tempData.flag=e.detail.flag
         tempUrl+="user/upUserInfo"
+        var temp={
+          flag:tempData.flag,
+          nowTime:tempData.nowTime,
+          userid:app.data.userid
+        }
+        this.selectComponent("#information").requestLineChartData(temp)
       }break;
       case 1:tempUrl+="user/machineList";break;
       case 3:{
@@ -53,6 +59,15 @@ Page({
           flag: Number(e.detail.flag),
           nowTime: this.generateSystemDate()
         }
+        var temp={
+          flag:tempData.flag,
+          nowTime:tempData.nowTime,
+          machineInfo:{
+            machineNum:this.data.machine.machineNum,
+            machineid:this.data.machine.machineid
+          }
+        }
+        this.selectComponent("#machine").requestLineChartData(temp)
       }break;
     }
     var that = this
@@ -64,6 +79,15 @@ Page({
       },
       method:"POST",
       success (res) {
+         //此处屏蔽了系统错误
+        if(!res.data.hasOwnProperty("code")){
+          wx.showToast({  
+            title: "网络错误",  
+            icon: 'none',  
+            duration: 2000,
+          })
+          return
+        }
         if(res.data.code==1000){
           switch(e.detail.index){
             case 0:{
@@ -77,10 +101,12 @@ Page({
                 information:res.data.data,
                 currentSonInformationTab:res.data.data.flag
               });
-            };break;//暂不处理
-            case 1:{that.setData({machine:res.data.data[0]})
-                    res.data.data.shift()
-                    that.setData({otherMachineList:res.data.data})}break;
+            };break;
+            case 1:{
+              that.setData({machine:res.data.data[0]})
+              res.data.data.shift()
+              that.setData({otherMachineList:res.data.data})
+            }break;
             case 3:{
               switch(res.data.data.flag){
                 case 0:res.data.data.tips="本日";break;
@@ -107,7 +133,7 @@ Page({
       },
       fail(res){
         wx.showToast({  
-          title: '网络错误，请检查网络',  
+          title: '未连接网络',  
           icon: 'none',  
           duration: 2000  ,
         })
@@ -125,6 +151,7 @@ Page({
   },
 
   machineDetail:function(e){
+    if(this.data.machine==null) return
     this.setData({
       choose_index:e.detail.index
     })

@@ -34,6 +34,15 @@ Page({
         },
         method:"POST",
         success (res) {
+           //此处屏蔽了系统错误
+          if(!res.data.hasOwnProperty("code")){
+            wx.showToast({  
+              title: "网络错误",  
+              icon: 'none',  
+              duration: 2000,
+            })
+            return
+          }
           if(res.data.code==1000){
             wx.showToast({  
               title: '登录成功',  
@@ -55,7 +64,7 @@ Page({
         },
         fail(res){
           wx.showToast({  
-            title: '网络错误，请检查网络',  
+            title: '未连接网络',  
             icon: 'none',  
             duration: 2000  ,
           })
