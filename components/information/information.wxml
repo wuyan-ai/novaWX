@@ -23,7 +23,7 @@
                 <text class="tips_right">领先于</text>
               </view>
               <view class="myProgress">
-                  <text class="tips1">{{information.outputSum}}吨</text>
+                  <text class="tips1">{{information.outputSum}}个</text>
                   <text class="tips2">{{information.upUserOutput}}的用户</text>
                   <view class="myBar1" style="width:{{information.upUserOutput}};"></view>
               </view>
