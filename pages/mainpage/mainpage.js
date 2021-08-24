@@ -43,14 +43,9 @@ Page({
         tempData.nowTime=this.generateSystemDate()
         tempData.flag=e.detail.flag
         tempUrl+="user/upUserInfo"
-        var temp={
-          flag:tempData.flag,
-          nowTime:tempData.nowTime,
-          userid:app.data.userid
-        }
-        this.selectComponent("#information").requestLineChartData(temp)
       }break;
       case 1:tempUrl+="user/machineList";break;
+      case 2:this.setData({choose_index:2});return;
       case 3:{
         tempUrl+="user/oneMachineInfo"
         tempData={
@@ -101,6 +96,12 @@ Page({
                 information:res.data.data,
                 currentSonInformationTab:res.data.data.flag
               });
+              var temp={
+                flag:res.data.data.flag,
+                nowTime:res.data.data.nowTime,
+                userid:app.data.userid
+              }
+              that.selectComponent("#information").requestLineChartData(temp)
             };break;
             case 1:{
               that.setData({machine:res.data.data[0]})

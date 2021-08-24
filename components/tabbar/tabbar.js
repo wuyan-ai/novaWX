@@ -21,7 +21,7 @@ Component({
         })
       }
       this.triggerEvent('change', {
-        key: item.key,
+        flag:0,
         index: index
       })
     },
