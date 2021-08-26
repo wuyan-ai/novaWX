@@ -11,10 +11,10 @@
   </view> 
   <view class="machine">  
         <view class="swiper-tab">  
-          <view class="tab-item {{currentSonMachineTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichSonMachineNav">本日</view>  
-          <view class="tab-item {{currentSonMachineTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichSonMachineNav">本周</view>  
-          <view class="tab-item {{currentSonMachineTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichSonMachineNav">本月</view>
-          <view class="tab-item {{currentSonMachineTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichSonMachineNav">本年</view>   
+          <view class="tab-item {{currentSonMachineTab==0 ? 'on' : 'rgb(231,232,233)'}}" data-current="0" bindtap="swichSonMachineNav" style="background-color: {{currentSonMachineTab==0 ? '#ffffff' : 'rgb(231,232,233)'}}">本日</view>  
+          <view class="tab-item {{currentSonMachineTab==1 ? 'on' : 'rgb(231,232,233)'}}" data-current="1" bindtap="swichSonMachineNav" style="background-color: {{currentSonMachineTab==1 ? '#ffffff' : 'rgb(231,232,233)'}}">本周</view>  
+          <view class="tab-item {{currentSonMachineTab==2 ? 'on' : 'rgb(231,232,233)'}}" data-current="2" bindtap="swichSonMachineNav" style="background-color: {{currentSonMachineTab==2 ? '#ffffff' : 'rgb(231,232,233)'}}">本月</view>
+          <view class="tab-item {{currentSonMachineTab==3 ? 'on' : 'rgb(231,232,233)'}}" data-current="3" bindtap="swichSonMachineNav" style="background-color: {{currentSonMachineTab==3 ? '#ffffff' : 'rgb(231,232,233)'}}" >本年</view>   
         </view>
         <view class="machine_status">
           <view class="machine_img" bindtouchend="moreMachine">
