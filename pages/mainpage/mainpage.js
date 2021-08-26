@@ -115,8 +115,6 @@ Page({
                 case 2:res.data.data.tips="本月";break;
                 case 3:res.data.data.tips="本年";break;
               }
-              // that.data.machine.output = res.data.data.output
-              // that.data.machine.machineWorkTime = res.data.data.machineWorkTime
               that.setData({
                 machine:res.data.data,
                 currentSonMachineTab:res.data.data.flag

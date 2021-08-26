@@ -129,7 +129,6 @@ Component({
         },
         method:"POST",
         success (res) {
-          // 此处屏蔽了系统错误
           if(!res.data.hasOwnProperty("code")){
             wx.showToast({  
               title: "网络错误",  
@@ -138,6 +137,8 @@ Component({
             })
             return
           }
+
+          //TODO:此处需要重新设计横坐标的标签
           if(res.data.code==1000){
             switch(e.flag){
               case 0:var xAxisData=['0:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'];break
@@ -156,8 +157,7 @@ Component({
                 type: 'line',
                 smooth: true,
                 data: res.data.data}]}
-                // data: ['12','23','234','33','45','16']}]}
-              that.data.chart.setOption(option);
+                that.data.chart.setOption(option);
           }
           else{
             wx.showToast({  
