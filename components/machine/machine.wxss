@@ -23,6 +23,7 @@
 .date{
   font-size: 25rpx;
   margin-left: 5%;
+  color:#777;
 }
 .machine{
   width: 100%;

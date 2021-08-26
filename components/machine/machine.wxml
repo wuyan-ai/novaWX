@@ -19,10 +19,10 @@
         <view class="machine_status">
           <view class="machine_img" bindtouchend="moreMachine">
             <cover-image class="img" src="{{machine.machineStatus == '运行'|| machine.machineStatus == '空闲' ?'/images/machine_online.png':'/images/machine_offline.png'}}" mode="aspectFit" ></cover-image>
-            <view class="machine_name">当前设备：设备{{machine.machineNum}}</view>
+            <view class="machine_name">当前设备：设备{{machine.machineid}}</view>
           </view>
           <view class="machine_info">
-            <view class="machine_detail">设备ID：{{machine.machineid}}</view>
+            <view class="machine_detail">设备ID：{{machine.machineNum}}</view>
             <view class="blank"></view>
             <view class="machine_detail">设备状态：{{machine.machineStatus}}</view>
             <view class="blank"></view>
