@@ -195,6 +195,7 @@ Component({
     },
 
     touchStart(e) {
+
       if (this.chart && e.touches.length > 0) {
         var touch = e.touches[0];
         var handler = this.chart.getZr().handler;

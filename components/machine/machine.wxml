@@ -2,7 +2,7 @@
   <view class="chartView">
     <view class="info">
       <view class="date">{{machine.tips}}</view>
-      <view class="yeild">{{yeild}}</view>
+      <view class="yeild">{{machine.yeild}}</view>
       <view class="date">{{date}}</view>
     </view> 
     <view class="lineCanvs">

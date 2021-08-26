@@ -217,7 +217,8 @@ Page({
     var minute = date.getMinutes()
     var second = date.getSeconds()
     this.setData({
-      date:year+"年"+month+"月"+day+"日"
+      // date:year+"年"+month+"月"+day+"日"
+      date:year+"-"+month+"-"+day
     })
     return [year,month,day].map(this.formatNumber).join('-')+" "+[hour,minute,second].map(this.formatNumber).join(':')
   },

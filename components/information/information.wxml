@@ -2,7 +2,7 @@
   <view class="chartView">
     <view class="info">
       <view class="date">{{information.tips_left}}</view>
-      <view class="yeild">{{information.tips1}}</view>
+      <view class="yeild">{{information.tips}}</view>
       <view class="date">{{date}}</view>
     </view> 
     <view class="lineCanvs">
