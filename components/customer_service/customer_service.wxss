@@ -1,6 +1,6 @@
 /* components/notebook/notebook.wxss */
 .service{
-  font-size: 50rpx;
+  font-size: 45rpx;
   color: #000000;
   font-family:SimHei;   /* 黑体 */
   display: flex;
@@ -9,7 +9,7 @@
   margin-top:70rpx;
 }
 .text-form{
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: #000000;
   font-family:SimHei;   /* 黑体 */
   display: flex;
@@ -18,7 +18,7 @@
   margin-top:50rpx;
 }
 .text-form2{
-  font-size: 40rpx;
+  font-size: 32rpx;
   color: #000000;
   font-family:SimHei;   /* 黑体 */
   display: flex;
