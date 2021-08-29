@@ -181,4 +181,36 @@ Component({
   created:function(){
     that = this
   },
+
+
+  //获取本日第n个小时的起始时间  0：0点  1：1点  。。。  23：23点
+  getCurrenDay: function(n){
+    var date = new Date();
+    date.setDate(date.getDate() - date.getDay() + 1);
+    var begin = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()-1) +" "+n+ ":00:00";
+    return begin
+  },
+
+  //获取本周第n周的起始时间  1：本周第一天
+  getCurrentWeek: function(n){
+    var date = new Date();
+    // 本周一的日期
+    date.setDate(date.getDate() - date.getDay() + 1);
+    var begin = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate()-8+n) + " 00:00:00";
+    return begin
+  },
+
+  //获取本月第n天的起始时间   1：本月第一天
+  getCurrentMonth: function(n){
+      var date = new Date();
+      var begin = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + n + " 00:00:00";
+      return begin
+      },
+
+  //获取本年第n个月的起始时间   1：第一个月
+  getCurrentYear: function(n){
+    var date = new Date();
+    var begin = date.getFullYear() + "-" + n + "-" + 1 + " 00:00:00";
+    return begin
+  },
 });
