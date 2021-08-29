@@ -15,7 +15,8 @@ Component({
         right:'5%',
         top: '5%', 
         width: '85%', 
-        height: '85%'
+        height: '85%',
+        backgroundColor: 'rgb(250,250,250)',
       },
       tooltip: {
         show: true,
