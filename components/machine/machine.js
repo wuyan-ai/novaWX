@@ -1,6 +1,6 @@
 import * as echarts from '../../utils/ec-canvas/echarts'
 var that = null
-var app =getApp()
+
 Component({
   properties:{
     date:null,
@@ -104,12 +104,20 @@ Component({
         }
       }
     },
-    chart:null
+    chart:null,
   },
   methods: { 
     swichSonMachineNav: function (e) {
-      var myDetail={index:e.target.dataset.current}
-      this.triggerEvent("swichSonMachineNav",myDetail)
+      var flag = e.target.dataset.current
+      if (this.data.currentSonInformationTab === flag) {
+        return false;
+      } else {
+        var myDetail = {
+            index:3,
+            flag:flag,
+        }
+        this.triggerEvent("swichSonMachineNav",myDetail)
+      }
     },
 
     moreMachine:function(){
@@ -118,6 +126,7 @@ Component({
      },
 
      requestLineChartData:function(e){
+      var app =getApp()
       var tempUrl=app.data.networkAddress+"user/oneOutputList";
       var tempData={
         flag:e.flag,
