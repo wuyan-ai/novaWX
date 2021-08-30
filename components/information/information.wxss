@@ -45,6 +45,9 @@
   /* background-color: rgb(232,232,232); */
   border: #ffffff;  
 }  
+.blank{
+  height: 1%;
+}
 .swiper {  
   background: #ffffff;  
 }  

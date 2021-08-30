@@ -94,12 +94,18 @@ Component({
         type: 'category',
         boundaryGap: false,
         data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        splitLine: {
+          show: true,
+          lineStyle:{
+               type: 'solid'
+          }
+      },
       },
       yAxis: {
         type: 'value',
         splitLine: {
           lineStyle: {
-            type: 'dashed'
+            type: 'solid'
           }
         }
       }
@@ -151,17 +157,34 @@ Component({
               case 3:var xAxisData=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];break
             }
             var option = {
+              tooltip:{
+                show: true,
+                trigger: 'axis',
+                axisPointer:{
+                    type: 'cross',
+                    axis: 'y',
+                    crossStyle:{
+                        type: 'solid'
+                    }
+                }
+            },
               xAxis: {
                 type: 'category',
                 boundaryGap: false,
+                splitLine: {
+                  lineStyle: {
+                    type: 'solid',
+                  }
+                },
                 data: xAxisData,
               },
               series: [{
-                symbol: 'none',
+                showSymbol: false,        //设置点击显示小圆点
                 type: 'line',
                 smooth: true,
                 itemStyle : {
                   normal : {
+                    color: "rgb(220,144,150)",     //设置小圆点颜色
                     lineStyle:{
                       color:'rgb(220,144,150)'
                     }
