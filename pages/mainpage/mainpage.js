@@ -1,4 +1,5 @@
 var app =getApp()
+var that = null
 Page({
   data: {
     currentSonMachineTab:0,
@@ -33,10 +34,10 @@ Page({
     otherMachineList:null,
     date:app.data.globalDate,
     information:null,
+    clock:null
   },
 
   tabChange: function(e) {
-
     var tempUrl=app.data.networkAddress;
     var tempData={userid:app.data.userid}
     switch(e.detail.index){
@@ -45,8 +46,13 @@ Page({
         tempData.flag=e.detail.flag
         tempUrl+="user/upUserInfo"
       }break;
-      case 1:tempUrl+="user/machineList";break;
-      case 2:this.setData({choose_index:2});return;
+      case 1:{
+        tempUrl+="user/machineList"
+      }break;
+      case 2:{
+        this.setData({choose_index:2})
+        return
+      }
       case 3:{
         tempUrl+="user/oneMachineInfo"
         tempData={
@@ -66,7 +72,6 @@ Page({
         this.selectComponent("#machine").requestLineChartData(temp)
       }break;
     }
-    var that = this
     wx.request({
       url: tempUrl,
       data : tempData,
@@ -85,6 +90,7 @@ Page({
           return
         }
         if(res.data.code==1000){
+          // switch(res.data.data.index){
           switch(e.detail.index){
             case 0:{
               switch(res.data.data.flag){
@@ -180,42 +186,24 @@ Page({
   },
 
   swichSonMachineNav:function(e){
-    if (this.data.currentSonMachineTab === e.detail.index) {
-      return false;
-    } else {
-      var myDetail = {
-        detail:{
-          index:3,
-          flag:Number(e.detail.index)
-        }
-      }
-      this.tabChange(myDetail)
-    }
+    this.tabChange(e)
   },
 
   swichSonInformationNav:function(e){
-    if (this.data.currentSonInformationTab === e.detail.index) {
-      return false;
-    } else {
-      var myDetail = {
-        detail:{
-          index:0,
-          flag:Number(e.detail.index)
-        }
-      }
-      this.tabChange(myDetail)
-    }
+    this.tabChange(e)
   },
 
   onLoad(res){
     var e={
       detail:{
         flag:0,
-        index:0
+        index:0,
+        clock:0
       }
     }
     this.setData({currentSonInformationTab:0})
     this.tabChange(e)
+    that = this
   }, 
 
   generateDate:function(){
@@ -223,6 +211,33 @@ Page({
         date:app.generateSystemDate().split(" ")[0]
       })
     return app.generateSystemDate()
+  },
+
+  onShow:function(){
+    this.data.clock = setInterval(
+      function(){
+        if(that.data.choose_index==0){
+          var  myDetail = {
+            detail:{
+              index:0,
+              flag:that.data.currentSonInformationTab,
+            }
+          }
+          that.tabChange(myDetail)          
+        }
+        if(that.data.choose_index==3){
+          var  myDetail = {
+            detail:{
+              index:3,
+              flag:that.data.currentSonMachineTab,
+            }
+          }
+          that.tabChange(myDetail)
+        }
+      },600000)
+  },
+
+  onUnload:function(){
+    clearInterval(this.data.clock)
   }
-  
 })

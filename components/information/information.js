@@ -107,11 +107,18 @@ Component({
     },
   },
 
-  
   methods: {
     swichSonInformationNav: function (e) {
-      var myDetail={index:e.target.dataset.current}
-      this.triggerEvent("swichSonInformationNav",myDetail)
+      var index = Number(e.target.dataset.current)
+      if (this.data.currentSonInformationTab === index) {
+        return false;
+      } else {
+        var myDetail = {
+            index:0,
+            flag:index,
+        }
+        this.triggerEvent("swichSonInformationNav",myDetail)
+      }
     },  
   
     requestLineChartData:function(e){
