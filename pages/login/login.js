@@ -53,7 +53,6 @@ Page({
               url: '/pages/mainpage/mainpage',
             })
             app.data.userid=res.data.userid
-            app.data.globalDate=new Date()
           }
           else{
             wx.showToast({  
