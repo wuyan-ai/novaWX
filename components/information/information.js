@@ -13,9 +13,9 @@ Component({
         show:'true',
         left: '10%',
         right:'5%',
-        top: '5%', 
+        top: '8%', 
         width: '85%', 
-        height: '85%',
+        height: '80%',
         backgroundColor: 'rgb(250,250,250)',
       },
       tooltip: {
@@ -159,6 +159,28 @@ Component({
                 symbol: 'none',
                 type: 'line',
                 smooth: true,
+                itemStyle : {
+                  normal : {
+                    lineStyle:{
+                      color:'rgb(220,144,150)'
+                    }
+                  }
+                },
+                areaStyle:{
+                  normal:{
+                      //右，下，左，上
+                      color:new echarts.graphic.LinearGradient(0,0,0,1,[
+                          {
+                              offset:0,
+                              color:'rgb(220,144,150)'
+                          },
+                          {
+                              offset:1,
+                              color:'rgb(250,250,250)'
+                          }
+                      ],false) 
+                  }
+              },
                 data: res.data.data}]}
                 that.data.chart.setOption(option);
           }

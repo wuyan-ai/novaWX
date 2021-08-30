@@ -26,7 +26,8 @@
             <view class="blank"></view>
             <view class="machine_detail">设备状态：{{machine.machineStatus}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">更新时间：{{machine.machineUpdateTime}}</view>
+            <view class="machine_detail">更新时间: <text>\n</text> {{machine.machineUpdateTime}}</view>
+
             <view class="blank"></view>
             <view class="machine_detail">{{machine.tips}}产量：{{machine.output}}</view>
             <view class="blank"></view>
