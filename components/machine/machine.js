@@ -1,6 +1,6 @@
 import * as echarts from '../../utils/ec-canvas/echarts'
 var that = null
-var app =getApp()
+
 Component({
   properties:{
     date:null,
@@ -35,12 +35,11 @@ Component({
         formatter:function(params){
           var app =getApp()
           var tempUrl=app.data.networkAddress+"user/nowMachineOutputSum";
-          var tempDate=null
+          var tempDate=that.data.date+" "
+          //TODO:此处需要传入合适的tempDate
           switch(that.data.currentSonMachineTab){
-            case 0:tempDate=app.getCurrenDay(params[0].dataIndex+1);break;
-            case 1:tempDate=app.getCurrentWeek(params[0].dataIndex+1);break;
-            case 2:tempDate=app.getCurrentMonth(params[0].dataIndex+1);break;
-            case 3:tempDate=app.getCurrentYear(params[0].dataIndex+1);break;
+            case 0:tempDate+=params[0].axisValue+":00";break;
+            case 1:;break;
           }
 
           var tempData={
@@ -118,6 +117,7 @@ Component({
      },
 
      requestLineChartData:function(e){
+      var app =getApp()
       var tempUrl=app.data.networkAddress+"user/oneOutputList";
       var tempData={
         flag:e.flag,
@@ -143,16 +143,17 @@ Component({
 
           //TODO:此处需要重新设计横坐标的标签
           if(res.data.code==1000){
-            var tempData={
-              flag:that.data.currentSonMachineTab,
-              year:app.data.globalDate.getFullYear(),
-              month:app.data.globalDate.getMonth()+1
+            switch(e.flag){
+              case 0:var xAxisData=['0:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'];break
+              case 1:var xAxisData=['周一', '周二', '周三', '周四', '周五', '周六', '周日'];break
+              case 2:var xAxisData=[];break//此处待定
+              case 3:var xAxisData=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];break
             }
             var option = {
               xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: app.getLineXaisLabel(tempData),
+                data: xAxisData,
               },
               series: [{
                 symbol: 'none',

@@ -1,4 +1,3 @@
-var app =getApp()
 Page({
   data: {
     currentSonMachineTab:0,
@@ -31,17 +30,17 @@ Page({
     },
     machine:null,
     otherMachineList:null,
-    date:app.data.globalDate,
+    date:null,
     information:null,
   },
 
   tabChange: function(e) {
-
+    var app =getApp()
     var tempUrl=app.data.networkAddress;
     var tempData={userid:app.data.userid}
     switch(e.detail.index){
       case 0:{
-        tempData.nowTime=this.generateDate()
+        tempData.nowTime=this.generateSystemDate()
         tempData.flag=e.detail.flag
         tempUrl+="user/upUserInfo"
       }break;
@@ -53,7 +52,7 @@ Page({
           machineid: Number(this.data.machine.machineid),
           machineNum: this.data.machine.machineNum,
           flag: Number(e.detail.flag),
-          nowTime: this.generateDate()
+          nowTime: this.generateSystemDate()
         }
         var temp={
           flag:tempData.flag,
@@ -207,6 +206,26 @@ Page({
     }
   },
 
+  generateSystemDate:function(){
+    var date=new Date()
+    var year = date.getFullYear()
+    var month = date.getMonth()+1
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    this.setData({
+      // date:year+"年"+month+"月"+day+"日"
+      date:year+"-"+month+"-"+day
+    })
+    return [year,month,day].map(this.formatNumber).join('-')+" "+[hour,minute,second].map(this.formatNumber).join(':')
+  },
+  
+  formatNumber:function(n){
+    n=n.toString()
+    return n[1]?n:'0'+n
+  },
+  
   onLoad(res){
     var e={
       detail:{
@@ -217,12 +236,4 @@ Page({
     this.setData({currentSonInformationTab:0})
     this.tabChange(e)
   }, 
-
-  generateDate:function(){
-    this.setData({
-        date:app.generateSystemDate().split(" ")[0]
-      })
-    return app.generateSystemDate()
-  }
-  
 })
