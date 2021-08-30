@@ -59,12 +59,12 @@
 
 .machine_status{
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
 .machine_img{
-  width: 45%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -72,21 +72,22 @@
   align-items: center;
 }
 .img{
-  width: 55%;
+  width: 50%;
   height: 25%;
 }
+
 .machine_name{
-  background-color: white;
+  background-color: rgb(232,232,232);
   border-radius: 15rpx;
   font-size: small;
   width: fit-content;
 }
 .machine_info{
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center
 }
 .blank{
   height: 3%;
@@ -95,5 +96,5 @@
   background-color: rgb(232,232,232);
   border-radius: 15rpx;
   font-size: small;
-  width: 85%;
+  width: 90%;
 }

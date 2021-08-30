@@ -9,7 +9,6 @@
       <lineChart id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></lineChart>
     </view>
   </view> 
-  <view class="blank"></view>
   <view class="machine">  
         <view class="swiper-tab">  
           <view class="tab-item {{currentSonMachineTab==0 ? 'on' : 'rgb(231,232,233)'}}" data-current="0" bindtap="swichSonMachineNav" style="background-color: {{currentSonMachineTab==0 ? '#ffffff' : 'rgb(231,232,233)'}}">本日</view>  
@@ -27,7 +26,7 @@
             <view class="blank"></view>
             <view class="machine_detail">设备状态：{{machine.machineStatus}}</view>
             <view class="blank"></view>
-            <view class="machine_detail">更新时间: <text>\n</text> {{machine.machineUpdateTime}}</view>
+            <view class="machine_detail">更新时间：{{machine.machineUpdateTime}}</view>
             <view class="blank"></view>
             <view class="machine_detail">{{machine.tips}}产量：{{machine.output}}</view>
             <view class="blank"></view>

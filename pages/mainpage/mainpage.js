@@ -1,5 +1,4 @@
 var app =getApp()
-var that = null
 Page({
   data: {
     currentSonMachineTab:0,
@@ -14,52 +13,47 @@ Page({
           "key": "information",
           "iconPath": "/images/information.png",
           "selectedIconPath": "/images/information_selected.png",
-          "text": "数 据"
+          "text": "数据"
         },
         {
           "key": "machine",
           "iconPath": "/images/machine.png",
           "selectedIconPath": "/images/machine_selected.png",
-          "text": "设 备"
+          "text": "设备"
         },
         {
           "key": "customer_service",
           "iconPath": "/images/customer_service.png",
           "selectedIconPath": "/images/customer_service_selected.png",
-          "text": "客 服"
+          "text": "客服"
         }
       ]
     },
     machine:null,
     otherMachineList:null,
-    date:null,
+    date:app.data.globalDate,
     information:null,
-    clock:null
   },
 
   tabChange: function(e) {
+
     var tempUrl=app.data.networkAddress;
     var tempData={userid:app.data.userid}
     switch(e.detail.index){
       case 0:{
-        tempData.nowTime=this.generateSystemDate()
+        tempData.nowTime=this.generateDate()
         tempData.flag=e.detail.flag
         tempUrl+="user/upUserInfo"
       }break;
-      case 1:{
-        tempUrl+="user/machineList"
-      }break;
-      case 2:{
-        this.setData({choose_index:2})
-        return
-      }
+      case 1:tempUrl+="user/machineList";break;
+      case 2:this.setData({choose_index:2});return;
       case 3:{
         tempUrl+="user/oneMachineInfo"
         tempData={
           machineid: Number(this.data.machine.machineid),
           machineNum: this.data.machine.machineNum,
           flag: Number(e.detail.flag),
-          nowTime: this.generateSystemDate()
+          nowTime: this.generateDate()
         }
         var temp={
           flag:tempData.flag,
@@ -72,6 +66,7 @@ Page({
         this.selectComponent("#machine").requestLineChartData(temp)
       }break;
     }
+    var that = this
     wx.request({
       url: tempUrl,
       data : tempData,
@@ -90,7 +85,6 @@ Page({
           return
         }
         if(res.data.code==1000){
-          // switch(res.data.data.index){
           switch(e.detail.index){
             case 0:{
               switch(res.data.data.flag){
@@ -186,44 +180,42 @@ Page({
   },
 
   swichSonMachineNav:function(e){
-    this.tabChange(e)
+    if (this.data.currentSonMachineTab === e.detail.index) {
+      return false;
+    } else {
+      var myDetail = {
+        detail:{
+          index:3,
+          flag:Number(e.detail.index)
+        }
+      }
+      this.tabChange(myDetail)
+    }
   },
 
   swichSonInformationNav:function(e){
-    this.tabChange(e)
+    if (this.data.currentSonInformationTab === e.detail.index) {
+      return false;
+    } else {
+      var myDetail = {
+        detail:{
+          index:0,
+          flag:Number(e.detail.index)
+        }
+      }
+      this.tabChange(myDetail)
+    }
   },
 
-  generateSystemDate:function(){
-    var date=new Date()
-    var year = date.getFullYear()
-    var month = date.getMonth()+1
-    var day = date.getDate()
-    var hour = date.getHours()
-    var minute = date.getMinutes()
-    var second = date.getSeconds()
-    this.setData({
-      // date:year+"年"+month+"月"+day+"日"
-      date:year+"-"+month+"-"+day
-    })
-    return [year,month,day].map(this.formatNumber).join('-')+" "+[hour,minute,second].map(this.formatNumber).join(':')
-  },
-  
-  formatNumber:function(n){
-    n=n.toString()
-    return n[1]?n:'0'+n
-  },
-  
   onLoad(res){
     var e={
       detail:{
         flag:0,
-        index:0,
-        clock:0
+        index:0
       }
     }
     this.setData({currentSonInformationTab:0})
     this.tabChange(e)
-    that = this
   }, 
 
   generateDate:function(){
@@ -231,33 +223,6 @@ Page({
         date:app.generateSystemDate().split(" ")[0]
       })
     return app.generateSystemDate()
-  },
-
-  onShow:function(){
-    this.data.clock = setInterval(
-      function(){
-        if(that.data.choose_index==0){
-          var  myDetail = {
-            detail:{
-              index:0,
-              flag:that.data.currentSonInformationTab,
-            }
-          }
-          that.tabChange(myDetail)          
-        }
-        if(that.data.choose_index==3){
-          var  myDetail = {
-            detail:{
-              index:3,
-              flag:that.data.currentSonMachineTab,
-            }
-          }
-          that.tabChange(myDetail)
-        }
-      },600000)
-  },
-
-  onUnload:function(){
-    clearInterval(this.data.clock)
   }
+  
 })
