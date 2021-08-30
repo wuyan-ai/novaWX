@@ -21,7 +21,7 @@
       <view class="machine_img_item" wx:for="{{otherMachineList}}" wx:key="item" >
         <!-- <cover-image id="{{item.machineID}}" class="img_item" src="{{item.imgSrc}}" mode="aspectFit" bindtap="swap"></cover-image> -->
         <cover-image id="{{item.machineid}}" class="img_item" src="/images/machine_offline.png" mode="aspectFit" bindtap="swap"></cover-image>
-        <view class="machineName_item">当前设备：设备{{item.machineid}}</view>
+        <view class="machineName_item">设备{{item.machineid}}</view>
       </view>
     </view>  
 
