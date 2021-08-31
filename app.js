@@ -21,11 +21,11 @@ App({
       return n[1]?n:'0'+n
     },
 
-    getCurrenDay: function(n){
+    getCurrenDay: function(n){    //00:00:00  1:00:00    ....  23:00:00  23:59:59
       return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()) +" "+(n-1)+ ":00:00"
     },
   
-    getCurrentWeek: function(n){
+    getCurrentWeek: function(n){  //周一 00:00:00  周一 8:00:00    ....  周日23:00:00   ....  周日 23:59:59
       if(n%3==1)
         return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 00:00:00"
       if(n%3==2)
@@ -34,11 +34,11 @@ App({
         return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 16:00:00"
     },
 
-    getCurrentMonth: function(n){
+    getCurrentMonth: function(n){   //8-1 00:00:00           ....  8-31 00:00:00  8-31 23:59:59
         return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + n + " 00:00:00"
     },
 
-    getCurrentYear: function(n){
+    getCurrentYear: function(n){   //1-1 00:00:00           ....  12-15 00:00:00  12-31 23:59:59
       if(n%2==1)
         return this.data.globalDate.getFullYear() + "-" + n + "-" + 1 + " 00:00:00"
       else
