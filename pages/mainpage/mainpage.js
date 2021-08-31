@@ -14,19 +14,19 @@ Page({
           "key": "information",
           "iconPath": "/images/information.png",
           "selectedIconPath": "/images/information_selected.png",
-          "text": "数据"
+          "text": "数 据"
         },
         {
           "key": "machine",
           "iconPath": "/images/machine.png",
           "selectedIconPath": "/images/machine_selected.png",
-          "text": "设备"
+          "text": "设 备"
         },
         {
           "key": "customer_service",
           "iconPath": "/images/customer_service.png",
           "selectedIconPath": "/images/customer_service_selected.png",
-          "text": "客服"
+          "text": "客 服"
         }
       ]
     },

@@ -21,8 +21,8 @@
 }
 
 .c_tabbar .tabbar_item .tabbar_item_img {
-  width: 54rpx;
-  height: 54rpx;
+  width: 52rpx;
+  height: 47rpx;
 }
 
 .c_tabbar .tabbar_item .tabbar_item_title.selected {

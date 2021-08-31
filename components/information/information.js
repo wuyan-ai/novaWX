@@ -13,9 +13,9 @@ Component({
         show:'true',
         left: '10%',
         right:'5%',
-        top: '5%', 
+        top: '8%', 
         width: '85%', 
-        height: '85%',
+        height: '80%',
         backgroundColor: 'rgb(250,250,250)',
       },
       tooltip: {
@@ -82,12 +82,18 @@ Component({
         type: 'category',
         boundaryGap: false,
         data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+        splitLine: {
+          show: true,
+          lineStyle:{
+               type: 'solid',
+          }
+      },
       },
       yAxis: {
         type: 'value',
         splitLine: {
           lineStyle: {
-            type: 'dashed'
+            type: 'solid'
           }
         }
       }
@@ -153,15 +159,49 @@ Component({
               month:app.data.globalDate.getMonth()+1
             }      
             var option = {
+              tooltip: {
+                trigger: 'axis',
+                 axisPointer:{
+                          type:'line',
+                          lineStyle:{
+                              color:'rgb(230,144,150)',
+                              width:1,
+                              type:'solid'
+                          }
+                    },
+            },
               xAxis: {
                 type: 'category',
                 boundaryGap: false,
                 data: app.getLineXaisLabel(tempData),
               },
               series: [{
-                symbol: 'none',
+                showSymbol: false,        //设置点击显示小圆点
                 type: 'line',
                 smooth: true,
+                itemStyle : {
+                  normal : {
+                    color: "rgb(220,144,150)",     //设置小圆点颜色
+                    lineStyle:{
+                      color:'rgb(220,144,150)'
+                    }
+                  }
+                },
+                areaStyle:{
+                  normal:{
+                      //右，下，左，上
+                      color:new echarts.graphic.LinearGradient(0,0,0,1,[
+                          {
+                              offset:0,
+                              color:'rgb(220,144,150)'
+                          },
+                          {
+                              offset:1,
+                              color:'rgb(250,250,250)'
+                          }
+                      ],false) 
+                  }
+              },
                 data: res.data.data}]}
                 that.data.chart.setOption(option);
           }
