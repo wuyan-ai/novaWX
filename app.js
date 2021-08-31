@@ -22,11 +22,16 @@ App({
     },
 
     getCurrenDay: function(n){
-      return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()) +" "+n+ ":00:00"
+      return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()) +" "+(n-1)+ ":00:00"
     },
   
     getCurrentWeek: function(n){
-      return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 00:00:00"
+      if(n%3==1)
+        return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 00:00:00"
+      if(n%3==2)
+        return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 08:00:00"
+      if(n%3==0)
+        return this.data.globalDate.getFullYear() + "-" + (this.data.globalDate.getMonth() + 1) + "-" + (this.data.globalDate.getDate()-8+n) + " 16:00:00"
     },
 
     getCurrentMonth: function(n){
@@ -34,22 +39,27 @@ App({
     },
 
     getCurrentYear: function(n){
-      return this.data.globalDate.getFullYear() + "-" + n + "-" + 1 + " 00:00:00"
+      if(n%2==1)
+        return this.data.globalDate.getFullYear() + "-" + n + "-" + 1 + " 00:00:00"
+      else
+        return this.data.globalDate.getFullYear() + "-" + n + "-" + 15 + " 00:00:00"
+
     },
 
     getLineXaisLabel(data){
       switch(data.flag){
-        case 0:return ['0:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'];
-        case 1:return ['周一0:00','周一8:00','周一16:00','周二0:00', '周二8:00','周二16:00', '周三0:00', '周三8:00','周三16:00','周四0:00','周四8:00','周四16:00','周五0:00','周五8:00','周五16:00', '周六0:00','周六8:00','周六16:00','周日0:00', '周日8:00','周日16:00'];
+        case 0:return ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24'];
+        case 1:return ['周一','','','周二', '','', '周三', '','','周四','','','周五','','', '周六','','','周日', '','',''];
         case 2:{
           var days = new Date(data.year,data.month,0).getDate();
           var temp = []
           for(var i=1;i<=days;i++){
             temp.push(i)
           }
+          temp.push(days+1)
           return temp
         }
-        case 3:return ['1月1号','1月15号','2月1号','2月15号','3月1号','3月2号','4月1号','4月15号','5月1号','5月15号','6月1号','6月15号','7月1号','7月15号','8月1号','8月15号','9月1号','9月15号','10月1号','10月15号','11月1号','11月15号','12月1号','12月15号'];
+        case 3:return ['1','','2','','3','','4','','5','','6','','7','','8','','9','','10','','11','','12','',''];
       }
     }
 })
