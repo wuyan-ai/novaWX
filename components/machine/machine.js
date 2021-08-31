@@ -140,7 +140,7 @@ Component({
       this.triggerEvent("moreMachine",myDetail)
      },
 
-     requestLineChartData:function(e){
+    requestLineChartData:function(e){
       var app =getApp()
       var tempUrl=app.data.networkAddress+"user/oneOutputList";
       var tempData={
@@ -164,7 +164,6 @@ Component({
             })
             return
           }
-
           //TODO:此处需要重新设计横坐标的标签
           if(res.data.code==1000){
             var tempData={

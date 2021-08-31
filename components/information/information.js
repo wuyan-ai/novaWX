@@ -168,7 +168,6 @@ Component({
             }      
             var option = {
               xAxis: {
-
                 data: app.getLineXaisLabel(tempData),
               },
               series: [{
