@@ -75,13 +75,21 @@ Component({
               })
             }
           })
-          return params[0].name+"  "+params[0].data
-        }
+          return params[0].name
+        },
+        trigger: 'axis',
+        axisPointer:{
+                  type:'line',
+                  lineStyle:{
+                      color:'rgb(230,144,150)',
+                      width:1,
+                      type:'solid'
+                  }
+        },
       },
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
         splitLine: {
           show: true,
           lineStyle:{
@@ -159,20 +167,8 @@ Component({
               month:app.data.globalDate.getMonth()+1
             }      
             var option = {
-              tooltip: {
-                trigger: 'axis',
-                 axisPointer:{
-                          type:'line',
-                          lineStyle:{
-                              color:'rgb(230,144,150)',
-                              width:1,
-                              type:'solid'
-                          }
-                    },
-            },
               xAxis: {
-                type: 'category',
-                boundaryGap: false,
+
                 data: app.getLineXaisLabel(tempData),
               },
               series: [{
@@ -201,7 +197,7 @@ Component({
                           }
                       ],false) 
                   }
-              },
+                },
                 data: res.data.data}]}
                 that.data.chart.setOption(option);
           }
