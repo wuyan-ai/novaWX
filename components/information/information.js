@@ -75,7 +75,26 @@ Component({
               })
             }
           })
-          return params[0].name
+          // return params[0].name
+          switch(that.data.currentSonInformationTab){
+            case 0:tempDate=params[0].dataIndex==24?"23:59:59":tempDate.split(" ")[1];break;
+            case 1:tempDate=params[0].dataIndex==21?"周日 23:59:59":params[0].name+tempDate.split(" ")[1];break;
+            case 2:{
+              var days = new Date(app.globalDate.getFullYear(),app.globalDate.getMonth(),0).getDate()
+              tempDate=params[0].dataIndex==days?tempDate.slice(5,10)+"23:59:59":tempDate.slice(5)
+            }break;
+            case 3:{
+              if(params[0].dataIndex==24){
+                tempDate="12-" + 31 + " 23:59:59";
+              }else{
+                if(params[0].dataIndex%2==0)
+                tempDate=Math.ceil((params[0].dataIndex+1)/2)+"-" + 1 + " 00:00:00";
+              else
+                tempDate=Math.ceil((params[0].dataIndex+1)/2)+"-" + 15 + " 00:00:00";
+              }
+            }break;
+          }
+          return tempDate
         },
         trigger: 'axis',
         axisPointer:{

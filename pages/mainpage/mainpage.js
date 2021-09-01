@@ -34,7 +34,8 @@ Page({
     otherMachineList:null,
     date:app.data.globalDate,
     information:null,
-    clock:null
+    clock:null,
+    timeCLock:null
   },
 
   tabChange: function(e) {
@@ -210,7 +211,7 @@ Page({
 
   generateDate:function(){
     this.setData({
-        date:app.generateSystemDate().split(" ")[0]
+        date:app.generateSystemDate()
       })
     return app.generateSystemDate()
   },
@@ -237,9 +238,14 @@ Page({
           that.tabChange(myDetail)
         }
       },600000)
+    this.data.clock = setInterval(function(){
+        app.data.globalDate = new Date()
+        that.generateDate()
+    },1000)
   },
 
   onUnload:function(){
     clearInterval(this.data.clock)
+    clearInterval(this.data.timeCLock)
   }
 })
