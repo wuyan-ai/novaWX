@@ -40,9 +40,9 @@ App({
 
     getCurrentYear: function(n){   //1-1 00:00:00           ....  12-15 00:00:00  12-31 23:59:59
       if(n%2==1)
-        return this.data.globalDate.getFullYear() + "-" + n + "-" + 1 + " 00:00:00"
+        return this.data.globalDate.getFullYear() + "-" + ((n+1)/2) + "-" + 1 + " 00:00:00"
       else
-        return this.data.globalDate.getFullYear() + "-" + n + "-" + 15 + " 00:00:00"
+        return this.data.globalDate.getFullYear() + "-" + (n/2) + "-" + 15 + " 00:00:00"
 
     },
 
