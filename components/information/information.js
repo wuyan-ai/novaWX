@@ -120,6 +120,9 @@ Component({
       xAxis: {
         type: 'category',
         boundaryGap: false,
+        axisLabel: {
+          interval:0,//代表显示所有x轴标签显示
+      },
         splitLine: {
           show: true,
           lineStyle:{
