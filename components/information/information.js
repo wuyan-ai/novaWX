@@ -80,13 +80,13 @@ Component({
             case 0:tempDate=params[0].dataIndex==24?"23:59:59":tempDate.split(" ")[1];break;
             case 1:{
               switch(Math.trunc(params[0].dataIndex/3)){
-                case 0:tempDate="周一"+tempDate.split(" ")[1];break;
-                case 1:tempDate="周二"+tempDate.split(" ")[1];;break;
-                case 2:tempDate="周三"+tempDate.split(" ")[1];;break;
-                case 3:tempDate="周四"+tempDate.split(" ")[1];;break;
-                case 4:tempDate="周五"+tempDate.split(" ")[1];;break;
-                case 5:tempDate="周六"+tempDate.split(" ")[1];;break;
-                case 6:tempDate="周日"+tempDate.split(" ")[1];;break;
+                case 0:tempDate="周一 "+tempDate.split(" ")[1];break;
+                case 1:tempDate="周二 "+tempDate.split(" ")[1];;break;
+                case 2:tempDate="周三 "+tempDate.split(" ")[1];;break;
+                case 3:tempDate="周四 "+tempDate.split(" ")[1];;break;
+                case 4:tempDate="周五 "+tempDate.split(" ")[1];;break;
+                case 5:tempDate="周六 "+tempDate.split(" ")[1];;break;
+                case 6:tempDate="周日 "+tempDate.split(" ")[1];;break;
                 case 7:tempDate="周日 23:59:59";break;
               }
             }break;
