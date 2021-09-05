@@ -177,3 +177,6 @@
 .blank{
   height: 1%;
 }
+.blank0{
+  height: 3%;
+}

@@ -83,7 +83,7 @@
 }
 
 .machine_name{
-  background-color: rgb(232,232,232);
+  background-color: #ffffff;
   border-radius: 15rpx;
   font-size: small;
   width: fit-content;
