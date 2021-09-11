@@ -2,7 +2,7 @@
 App({
   data:{
     userid:null,
-    networkAddress:"http://wy.free.svipss.top/",
+    networkAddress:"http://49.234.156.101:7777/",
     globalDate:null
   },
 
