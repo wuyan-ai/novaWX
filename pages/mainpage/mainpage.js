@@ -100,7 +100,7 @@ Page({
                 case 2:res.data.data.tips_left="本月";break;
                 case 3:res.data.data.tips_left="本年";break;
               }
-              res.data.data.tips="总产量："+res.data.data.outputSum
+              res.data.data.tips=res.data.data.outputSum
               that.setData({
                 information:res.data.data,
                 currentSonInformationTab:res.data.data.flag
@@ -124,7 +124,7 @@ Page({
                 case 2:res.data.data.tips="本月";break;
                 case 3:res.data.data.tips="本年";break;
               }
-              res.data.data.yeild="产量："+res.data.data.output
+              res.data.data.yeild=res.data.data.output
               that.setData({
                 machine:res.data.data,
                 currentSonMachineTab:res.data.data.flag

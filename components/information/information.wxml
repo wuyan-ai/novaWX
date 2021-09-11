@@ -2,8 +2,7 @@
   <view class="chartView">
     <view class="info">
       <view class="blank0"></view>
-      <view class="blank0"></view>
-      <view class="yeild">{{information.tips_left}}{{information.tips}}</view>
+      <view class="yeild">{{information.tips_left}}总产量：{{information.tips}}</view>
       <view class="date">{{date}}</view>
     </view> 
     <view class="lineCanvs">

@@ -1,9 +1,8 @@
 <view class="container">
   <view class="chartView">
     <view class="info">
-      <view class="blank"></view>
-      <view class="blank"></view>
-      <view class="yeild">{{machine.tips}}{{machine.yeild}}</view>
+      <view class="blank0"></view>
+      <view class="yeild">{{machine.tips}}产量：{{machine.yeild}}</view>
       <view class="date">{{date}}</view>
     </view> 
     <view class="lineCanvs">
