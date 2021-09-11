@@ -104,3 +104,6 @@
   font-size: small;
   width: 85%;
 }
+.blank0{
+  height: 21%;
+}
